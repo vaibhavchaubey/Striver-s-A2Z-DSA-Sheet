@@ -65,27 +65,37 @@ within days days. */
 
 // class Solution {
 // public:
-//     bool isPossible(int divisor, int threshold, int n, vector<int>& nums){
-//         int sum = 0;
+//     bool isPossible(int capacity, int days, int n, vector<int>& weights){
+//         int load = 0, requiredDays = 1;
 //         for(int i = 0; i < n; i++){
-//             sum += ceil((double)nums[i] / (double)divisor);
+//             if(load + weights[i] > capacity){
+//                 requiredDays++;
+//                 load = weights[i];
+//             }
+//             else{
+//                 load += weights[i];
+//             }
 //         }
-
-//         if(sum <= threshold){
+        
+//         if(requiredDays <= days){
 //             return true;
 //         }
 
 //         return false;
 //     }
-//     int smallestDivisor(vector<int>& nums, int threshold) {
-//         int n = nums.size();
+//     int shipWithinDays(vector<int>& weights, int days) {
+//         int n = weights.size();
+//         int minCap = 0, maxCap = 0;
+//         for(int i = 0; i < n; i++){
+//             minCap = max(minCap, weights[i]);
+//             maxCap += weights[i];
+//         }  
 //         int ans = -1;
-//         int maxEle = *max_element(nums.begin(), nums.end());
 
-//         int low = 1, high = maxEle;
+//         int low = minCap, high = maxCap;
 //         while(low <= high){
 //             int mid = low + (high - low) / 2;
-//             if(isPossible(mid, threshold, n, nums)){
+//             if(isPossible(mid, days, n, weights)){
 //                 ans = mid;
 //                 high = mid - 1;
 //             }
@@ -97,4 +107,3 @@ within days days. */
 //         return ans;
 //     }
 // };
-

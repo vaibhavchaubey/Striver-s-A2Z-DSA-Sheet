@@ -58,10 +58,10 @@
 //         while(low <= high){                              // O(logM)
 //             int mid = low + (high - low) / 2;
 //             int midN = func(mid, n, m);                 // mid^n (mid to the power n)
-//             if(midN == 1){
+//             if(midN == 1){                  // midN = m
 //                 return mid;
 //             }
-//             else if(midN == 0){
+//             else if(midN == 0){        // midN < m
 //                 low = mid + 1;
 //             }
             
