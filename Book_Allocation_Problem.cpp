@@ -15,7 +15,7 @@ If the allocation of books is not possible, return -1. */
 
 
 /* Solution 1: Brute Force   */
-// Time Complexity: O(N) * O(sumAll - manEle)
+// Time Complexity: O(N) * O(sumAll - maxEle)
 // Space Complexity: O(1)
 
 /* Range    [maxEle ................... sumAll]   =>  using Linear search for this range */
@@ -53,7 +53,7 @@ If the allocation of books is not possible, return -1. */
 
 //     int low = maxEle, high = sumAll;
 //     for(int i = low; i <= high; i++){
-//         // checking if by having a pages mid can we allocate books to m students
+//         // checking if by having a pages i can we allocate books to m students
 //         if(isPossible(i, m, n, arr)){
 //             return i;
 //         }
@@ -65,7 +65,7 @@ If the allocation of books is not possible, return -1. */
 
 
 /* Solution 2: Optimal Approach   (Using Binary Search)   */
-// Time Complexity: O(N) * O(log(sumAll - manEle))
+// Time Complexity: O(N) * O(log(sumAll - maxEle))
 // Space Complexity: O(1)
 
 /* Range    [maxEle ................... sumAll]   =>  using Binary search for this range */
