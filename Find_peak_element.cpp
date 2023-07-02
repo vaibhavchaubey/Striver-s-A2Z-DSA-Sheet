@@ -62,7 +62,7 @@ You must write an algorithm that runs in O(log n) time. */
 
 //             // mid is on the decreasing path  peak will be on left side
 //             // also handle the case when  nums[mid-1]  > nums[mid] < nums[mid+1]
-//             else{                           // if(nums[mid] > nums[mid-1])
+//             else{                           // if(nums[mid] < nums[mid-1])
 //                 high = mid - 1;
 //             }
 //         }

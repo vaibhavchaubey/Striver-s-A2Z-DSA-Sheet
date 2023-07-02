@@ -65,3 +65,35 @@ You must write a solution in O(log(m * n)) time complexity. */
 // };
 
 
+
+
+/* GFG  Submission    (Search in a matrix) */
+
+/* Problem Statement: Given a matrix mat[][] of size N x M, where every row and column is sorted in increasing order, 
+and a number X is given. The task is to find whether element X is present in the matrix or not. */
+
+
+/* Solution: */
+// Time Complexity: O(M + N)
+// Space Complexity: O(1) 
+
+
+// class Solution{
+// public:	
+// 	int matSearch (vector <vector <int>> &mat, int N, int M, int X)
+// 	{
+//         int r = 0, c = M-1;
+// 	    while(r < N && c >= 0){
+// 	        if(mat[r][c] == X){
+// 	            return 1;
+// 	        }
+// 	        if(mat[r][c] > X){
+// 	            c--;
+// 	        }
+// 	        else{
+// 	            r++;
+// 	        }
+// 	    }
+// 	    return 0;
+// 	}
+// };

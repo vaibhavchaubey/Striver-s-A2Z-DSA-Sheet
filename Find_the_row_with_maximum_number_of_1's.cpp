@@ -13,23 +13,21 @@ Find the 0-based index of the first row that has the maximum number of 1's. */
 // public:
 // 	int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
 // 	    int r = 0, c = m-1;
-// 	    int index = -1;
+// 	    int rowIndex = -1;
+	    
+// 	    // starting from top right corner
+//         // go left if you encounter 1
+//         // do down if you encounter 0
 // 	    while(r < n && c >= 0){
-// 	        int count = 0;         // to check whether a row has more 1's than previous
 // 	        if(arr[r][c] == 1){
-// 	            count++;
+// 	            rowIndex = r;
 // 	            c--;
 // 	        }
 // 	        else{
 // 	            r++;
 // 	        }
-// 	        // if the present row has more 1's than previous
-// 	        if(count == 1){
-// 	            index = r;
-// 	        }
 // 	    }
 	    
 // 	    return index;
 // 	}
-
 // };
