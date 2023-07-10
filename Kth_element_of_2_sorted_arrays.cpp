@@ -1,8 +1,8 @@
-/* GFG  Submission    (4. Median of Two Sorted Arrays) */
+/* GFG  Submission    (K-th element of two sorted Arrays) */
 
 
-/* Problem Statement: Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
-The overall run time complexity should be O(log (m+n)). */
+/* Problem Statement: Given two sorted arrays arr1 and arr2 of size N and M respectively and an element K. 
+The task is to find the element that would be at the kth position of the final sorted array. */
 
 
 
