@@ -28,6 +28,6 @@ Find the 0-based index of the first row that has the maximum number of 1's. */
 // 	        }
 // 	    }
 	    
-// 	    return index;
+// 	    return rowIndex;
 // 	}
 // };
