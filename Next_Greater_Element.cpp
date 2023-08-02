@@ -79,3 +79,42 @@ Use a stack to keep track of elements in nums2 that we haven't found the next gr
 // };
 
 
+
+
+
+/* Codestudio  Submission    (Next Greater Element) */
+
+/* Problem Statement: You are given an array 'a'of size 'n' Print the Next Greater Element (NGE) for every element. 
+The Next Greater Element for an element 'x' is the first element on the right side of 'x' in the array, which is 
+greater than 'x' If no greater elements exist to the right of 'x', consider the next greater element as - 1. */
+
+
+
+/* Solution: (Using Stack)
+Approach: Use an unordered map nextGreater to store the next greater element for each element in nums2.
+Use a stack to keep track of elements in nums2 that we haven't found the next greater element for. */
+
+// Time Complexity: O(N) + O(N)
+// Space Complexity: O(N) 
+
+
+// #include<bits/stdc++.h>
+// vector<int> nextGreaterElement(vector<int>& arr, int n)
+// {
+// 	vector<int> ans(n, -1);
+// 	stack<int> st;
+// 	for(int i = n-1; i >= 0; i--){
+// 		while(!st.empty() && st.top() <= arr[i]){
+// 			st.pop();
+// 		}
+// 		if(!st.empty()){
+// 			ans[i] = st.top();
+// 		}
+// 		st.push(arr[i]);
+// 	}
+
+// 	return ans;
+// }
+
+
+

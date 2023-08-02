@@ -146,7 +146,10 @@ We use two queues of size ‘N1’ and ‘N2’.  */
 
 
 /* Solution 3:      (Using 1 Queue)
-Approach: Try alternatively swapping elements between the two queues and make pop operation costly. */
+Approach: In a push operation, we can calculate the size of the queue ‘q1’.Hence we enqueue new data to the queue.
+Now suppose before inserting new data size of the queue is ‘x’, Hence we dequeue ‘x’ elements from the queue and 
+push it back again into the same queue.
+This would push the new element to the front of the queue. */
 
 /* Time Complexity: O(N*Q)
 where ‘N’ denotes the maximum number of elements in the queue, and ‘Q’ denotes the number of queries.

@@ -60,7 +60,7 @@ compute how much water it can trap after raining. */
 //                 }
 //                 left++;
 //             }
-//             else{                                   // height[right] > height[left]
+//             else{                                   // height[right] < height[left]
 //                 if(height[right] >= rightMax){
 //                     rightMax = height[right];
 //                 }
@@ -74,3 +74,4 @@ compute how much water it can trap after raining. */
 //         return waterTrapped;
 //     }
 // };
+

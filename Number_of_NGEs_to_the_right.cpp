@@ -8,7 +8,7 @@ index element. You must return an array 'answer' of length 'N', where 'answer[i]
 
 /* Solution: 
 
-Time Complexity: O(N * Q) + O(Q)
+Time Complexity: O(N * Q) 
 Where ‘N’ is the array ‘arr’ length and ‘Q’ is the array ‘query’ length. 
 Space Complexity: O(1) */
 
@@ -28,3 +28,4 @@ Space Complexity: O(1) */
 
 //     return ans;
 // }
+

@@ -41,7 +41,7 @@ you could search circularly to find its next greater number. If it doesn't exist
 // #include<vector>
 // #include<stack>
 // using namespace std;
-// vector<int> nextGreaterElements(vector<int> nums){        //Time Complexity: O(2N + 2N) ~ O(N)
+// vector<int> nextGreaterElements(vector<int> nums){        //Time Complexity: O(N) + O(N) ~ O(N)
 //     int n = nums.size();
 //     vector<int> ans(n,-1);
 //     stack<int> st;
