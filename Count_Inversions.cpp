@@ -52,6 +52,7 @@ Formally, two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j.
 //         int n2 = r-mid;
 //         long long a[n1];
 //         long long b[n2];
+
 //         for(int i = 0; i < n1; i++){
 //             a[i] = arr[l+i];
 //         }
@@ -81,6 +82,7 @@ Formally, two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j.
 //             arr[k] = b[j];
 //             k++; j++;
 //         }
+
 //         return inv;
 //     }
 //     long long mergeSort(long long arr[], int l, int r){
@@ -93,6 +95,7 @@ Formally, two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j.
         
 //             inv += merge(arr,l,mid,r);
 //         }
+
 //         return inv;
 //     }
 //     long long int inversionCount(long long arr[], long long N)

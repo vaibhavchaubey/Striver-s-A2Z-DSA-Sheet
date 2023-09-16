@@ -25,6 +25,7 @@ You may assume that the majority element always exists in the array. */
 //                 return nums[i];
 //             }
 //         }
+
 //         return -1;
 //     }
 // };
@@ -41,6 +42,7 @@ You may assume that the majority element always exists in the array. */
 //     int majorityElement(vector<int>& nums) {
 //         int n = nums.size();
 //         sort(nums.begin(),nums.end());
+
 //         return nums[n/2];         //It always return the majority element
 //     }
 // };
@@ -63,6 +65,7 @@ You may assume that the majority element always exists in the array. */
 //                 return nums[i];
 //             }
 //         }
+
 //         return -1;
 //     }
 // };

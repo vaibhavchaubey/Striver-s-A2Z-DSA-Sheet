@@ -29,7 +29,7 @@ You must write an algorithm that runs in O(n) time.  */
 //                 currentStreak = 1;
 //             }
 //             prev = nums[i];
-//             longestStreak = max(longestStreak,currentStreak);
+//             longestStreak = max(longestStreak, currentStreak);
 //         }
         
 //         return longestStreak;

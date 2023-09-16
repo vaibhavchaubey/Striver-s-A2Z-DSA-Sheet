@@ -128,3 +128,5 @@ So we can find the area of the rectangle by using arr[i] * (right smaller – le
 
 
 
+
+

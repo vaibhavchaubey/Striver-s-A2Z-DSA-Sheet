@@ -25,6 +25,7 @@ You can return the answer in any order. */
 //                 }
 //             }
 //         }
+
 //         return ans;
 //     }
 // };
@@ -59,6 +60,7 @@ You can return the answer in any order. */
 //                 left++;
 //             }
 //         }
+
 //         for(int i = 0; i < n; i++){
 //             if(nums[i] == n1){
 //                 ans.push_back(i);
@@ -93,6 +95,7 @@ You can return the answer in any order. */
 //             }
 //             mp[nums[i]] = i;
 //         }
+
 //         return ans;
 //     }
 // };

@@ -83,10 +83,11 @@ is missing and one number 'B' occurs twice in array. Find these two numbers. */
 //         // we have to define N as long long to avoid overflow whereas n is already given
 //         long long N = arr.size();   
 //         // S - SN = x - y
-//         // S2 - S2N
+//         // S2 - S2N = x^2 - y^2
 //         long long SN = (N * (N+1)) / 2;
 //         long long S2N = (N * (N+1) * (2*N+1)) / 6;
 //         long long S = 0, S2 = 0;
+
 //         for(int i = 0; i < N; i++){
 //             S += (long long)arr[i];
 //             S2 += (long long)arr[i] * (long long)arr[i];

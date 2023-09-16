@@ -8,7 +8,7 @@ Note: An array A rotated by x positions results in an array B of the same length
 where % is the modulo operation. */
 
 
-/* Solution:  */
+/* Solution: */
 // Time Complexity: O(N)
 // Space Complexity: O(1)  
 

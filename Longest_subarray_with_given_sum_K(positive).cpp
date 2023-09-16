@@ -1,3 +1,47 @@
+/* Codestudio  Submission    (Longest Subarray With Sum K) */
+
+
+/* Problem Statement: Problem Statement You are given an array 'a' of size 'n'and an integer "k'. Find the length of the longest 
+subarray of 'a' whose sum is equal to 'K'. */
+
+
+
+/* Solution: Using 2 pointers  (Only when there are Positive numbers) */
+// Time Complexity: O(2*N)
+// Space Complexity: O(1)
+
+
+// int longestSubarrayWithSumK(vector<int> a, long long k) {
+//     int n = a.size();
+//     int left = 0, right = 0;
+//     long long sum = 0;
+//     int maxLen = 0;
+//     while(right < n){
+//         sum += a[right];
+
+//         // if sum > k, reduce the subarray from left
+//         // until sum becomes less or equal to k:
+//         while(left <= right && sum > k){
+//             sum -= a[left];
+//             left++;
+//         }
+
+//         // if sum = k, update the maxLen i.e. answer:
+//         if(sum == k){
+//             maxLen = max(maxLen, right - left + 1);
+//         }
+
+//         // Move forward through right pointer:
+//         right++;
+//     }
+
+//     return maxLen;
+// }
+
+
+
+
+
 /* GFG  Submission    (Longest Sub-Array with Sum K) */
 
 /* Problem Statement: Given an array containing N integers and an integer K., Your task is to find the length of the longest Sub-Array 
@@ -16,7 +60,7 @@ with the sum of the elements equal to the given value K. */
 //         int curSum = 0;
 //         int maxLength = 0;
 //         unordered_map<int, int> mp;        // sum, index
-//         for(int i = 0; i < N; i++){
+//         for(int i = 0; i < N; i++)
 //             curSum += A[i];
 //             if(curSum - K == 0){
 //                 maxLength = max(maxLength, i+1);
@@ -52,9 +96,9 @@ If we are given only Positive numbers then we can futher optimize above solution
 // using namespace std;
 
 // int getLongestSubarray(vector<int>& a, long long k) {
-//     int n = a.size(); // size of the array.
+//     int n = a.size();                // size of the array.
 
-//     int left = 0, right = 0; // 2 pointers
+//     int left = 0, right = 0;         // 2 pointers
 //     long long sum = a[0];
 //     int maxLen = 0;
 //     while (right < n) {
@@ -70,7 +114,7 @@ If we are given only Positive numbers then we can futher optimize above solution
 //             maxLen = max(maxLen, right - left + 1);
 //         }
 
-//         // Move forward thw right pointer:
+//         // Move forward through right pointer:
 //         right++;
 //         if (right < n) sum += a[right];
 //     }

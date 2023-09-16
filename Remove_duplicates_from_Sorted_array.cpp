@@ -9,7 +9,7 @@ were present in nums initially. The remaining elements of nums are not important
 Return k. */
 
 
-/* Solution: 1  */
+/* Solution: */
 // Time Complexity: O(N)
 // Space Complexity: O(1)  
 

@@ -1,7 +1,7 @@
-/* GFG  Submission    (Searching an element in a sorted array) */
+/* GFG  Submission    (Union of Two Sorted Arrays) */
 
-/* Problem Statement: Given an array arr[] sorted in ascending order of size N and an integer K. 
-Check if K is present in the array or not. */
+/* Problem Statement: Union of two arrays can be defined as the common and distinct elements in the two arrays.
+Given two sorted arrays of size n and m respectively, find their union. */
 
 
 /* Solution 1: Using Map  */
