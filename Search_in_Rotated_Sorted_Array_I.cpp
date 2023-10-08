@@ -8,6 +8,7 @@ Given the array nums after the rotation and an integer target, return true if ta
 You must decrease the overall operation steps as much as possible. */
 
 
+
 /* Solution 1: Brute Force   */
 // Time Complexity: O(N)
 // Space Complexity: O(1)

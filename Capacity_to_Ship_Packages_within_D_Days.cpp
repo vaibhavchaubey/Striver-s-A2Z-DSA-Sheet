@@ -10,7 +10,7 @@ within days days. */
 
 
 /* Solution 1: Brute Force   */
-// Time Complexity: O(N) * O(sumAll - manEle)
+// Time Complexity: O(N) * O(sumAll - maxEle)
 // Space Complexity: O(1)
 
 /* Range    [maxEle ................... sumAll]   =>  using Linear search for this range */
@@ -57,7 +57,7 @@ within days days. */
 
 
 /* Solution 2: Optimal Approach   (Using Binary Search)   */
-// Time Complexity: O(N) * O(log(sumAll - manEle))
+// Time Complexity: O(N) * O(log(sumAll - maxEle))
 // Space Complexity: O(1)
 
 /* Range    [maxEle ................... sumAll]   =>  using Binary search for this range */

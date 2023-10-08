@@ -69,25 +69,12 @@ You must write an algorithm that runs in O(m log(n)) or O(n log(m)) time. */
 //             // will get max element position for that row
 //             int rowMax = maxRowElementPosition(mat[middleRow], n);
 
-//             // middle row is the first row
-//             if(middleRow == 0 && mat[middleRow][rowMax] > mat[middleRow + 1][rowMax]){
+//             if((middleRow == 0 || mat[middleRow][rowMax] > mat[middleRow - 1][rowMax]) && (middleRow == m-1 || mat[middleRow][rowMax] > mat[middleRow + 1][rowMax])){
 //                 return {middleRow, rowMax};
-//             }
-
-//             // middle row is the last row
-//             if(middleRow == m-1 && mat[middleRow][rowMax] > mat[middleRow - 1][rowMax]){
-//                 return {middleRow, rowMax};
-//             }
-
-//             if(middleRow != 0 && middleRow != m-1){
-//                 // checking max element of the row with it's lower and upper row
-//                 if(mat[middleRow][rowMax] > mat[middleRow + 1][rowMax] && mat[middleRow][rowMax] > mat[middleRow - 1][rowMax]){
-//                     return {middleRow, rowMax};
-//                 }
 //             }
 
 //             // if max is lesser than next rows same column element, will move startRow to nextRow
-//             if(mat[middleRow][rowMax] < mat[middleRow + 1][rowMax]){
+//             else if(middleRow < m-1 && mat[middleRow][rowMax] < mat[middleRow + 1][rowMax]){
 //                 startRow = middleRow + 1; 
 //             }
 //             // otherwise move the endRow to current row - 1

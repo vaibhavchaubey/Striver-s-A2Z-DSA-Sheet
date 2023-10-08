@@ -7,7 +7,30 @@ Given an integer target, return true if target is in matrix or false otherwise.
 You must write a solution in O(log(m * n)) time complexity. */
 
 
-/* Solution 1: */
+/* Solution 1: Brute Force */
+// Time Complexity: O(M * N)
+// Space Complexity: O(1) 
+
+
+// class Solution {
+// public:
+//     bool searchMatrix(vector<vector<int>>& matrix, int target) {
+//         int m = matrix.size(), n = matrix[0].size();
+//         for(int i = 0; i < m; i++){ 
+//             for(int j = 0; j < n; j++){
+//                 if(matrix[i][j] == target){
+//                     return true;
+//                 }
+//             }
+//         }
+        
+//         return false;
+//     }
+// };
+
+
+
+/* Solution 2: Better Approach */
 // Time Complexity: O(M + N)
 // Space Complexity: O(1) 
 
@@ -35,7 +58,7 @@ You must write a solution in O(log(m * n)) time complexity. */
 
 
 
-/* Solution 2: Binary Search */
+/* Solution 3: Optimal Approach (Binary Search) */
 // Time Complexity: O(log(M * N))
 // Space Complexity: O(1) 
 
