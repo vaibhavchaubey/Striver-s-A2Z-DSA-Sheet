@@ -8,87 +8,88 @@ The testcases will be generated such that the answer is unique. */
 
 
 /* Solution 1: Brute Force */
-// Time Complexity: O(N * N)
-// Space Complexity: O(k)          
+// Time Complexity: O(N * N)    where N is the length of string s
+// Space Complexity: O(M)       where M is the length of string t  
 
 
 // class Solution {
 // public:
-//     int subarraysWithKDistinct(vector<int>& nums, int k) {
-//         int n = nums.size();
-//         int count = 0;
-//         for(int i = 0; i < n; i++){
-//             unordered_map<int, int> mp;                          // num, count
-//             for(int j = i; j < n; j++){
-//                 mp[nums[j]]++;
-//                 if(mp.size() > k){
-//                     break;
-//                 }
-//                 if(mp.size() == k){
+//     string minWindow(string s, string t) {
+//         unordered_map<char, int> mp;
+//         for(auto str : t){
+//             mp[str]++;
+//         }
+
+//         string ans = "";
+//         int minLen = INT_MAX;
+//         for(int i = 0; i < s.size(); i++){
+//             int count = 0;
+//             string str = "";
+//             unordered_map<char, int> mp1 = mp;
+//             for(int j = i; j < s.size(); j++){
+//                 str += s[j];
+//                 if(mp1[s[j]] > 0){
+//                     mp1[s[j]]--;
 //                     count++;
 //                 }
+//                 if(minLen > str.size() && count == t.size()){
+//                     minLen = str.size();
+//                     ans = str;
+//                     break;
+//                 }
 //             }
 //         }
 
-//         return count;
+//         return ans;
 //     }
 // };
 
 
 
 
-/* Solution 3: Sliding Window */
-// Time Complexity: O(2*N)
-// Space Complexity: O(k)
-
-
-/* Intuition
-First you may have feeling of using sliding window.
-Then this idea get stuck in the middle as some of the subarray may left out.
-
-This problem will be a very typical sliding window,
-if it asks the number of subarrays with at most K distinct elements.
-
-Just need one more step to reach the folloing equation:
-exactly(K) = atMost(K) - atMost(K-1) 
-
-QUESTION : How to count total number of subarray with atmost k different integers.
-
-ANS: (Simple Keep adding length of window size whenever window size is changed) Count=(right-left+1);
-
-More Clarify Above ans:
-As we iterate through an array ,one by one elements to the existing array adds up and as an element is added to the existing 
-array then it contributes to (right-left+1) subarrays and so till the current j pointer we will get all the possible subarrays.
-For an example : if array is {1,2,3,4,5} then it will have n(n+1)/2 subarrays i.e 5*(6)/2 = 15 subarrays and lets suppose we add 
-one more element to existing array(ele:6) then here right = 5 and lets take left = 0, then total (right-left+1) extra subarrays 
-will be added i.e (5 - 0 + 1) = 6 subarrays namely {6}, {5,6}, {4,5,6}, {3,4,5,6}, {2,3,4,5,6}, {1,2,3,4,5,6} respectively.   */
-
+/* Solution 2: Sliding Window */
+// Time Complexity: O(N)            where N is the length of string s
+// Space Complexity: O(M)           where M is the length of string t
 
 
 // class Solution {
 // public:
-//     int atMostK(vector<int>& nums, int k){
-//         int n = nums.size();
-//         unordered_map<int, int> mp;          // num, count
-//         int left = 0, right = 0;
-//         int count = 0;
-//         while(right < n){
-//             mp[nums[right]]++;
-//             while(mp.size() > k){
-//                 mp[nums[left]]--;
-//                 if(mp[nums[left]] == 0){
-//                     mp.erase(nums[left]);
-//                 }
-//                 left++;
-//             }
-
-//             count +=  right - left + 1;
-//             right++;
+//     string minWindow(string s, string t) {
+//         unordered_map<char, int> mp;
+//         for(auto str : t){
+//             mp[str]++;
 //         }
 
-//         return count;
-//     }
-//     int subarraysWithKDistinct(vector<int>& nums, int k) {
-//         return atMostK(nums, k) - atMostK(nums, k - 1);
+//         int count = mp.size();
+//         int minLen = INT_MAX;
+//         int i = 0, j  = 0, start = 0;
+//         while(j < s.size()){
+//             mp[s[j]]--;
+//             if(mp[s[j]] == 0){
+//                 count--;
+//             }
+//             if(count == 0){
+//                 while(count == 0){
+//                     if(minLen > (j - i + 1)){
+//                         minLen = j - i + 1;
+//                         start = i;
+//                     }
+//                     mp[s[i]]++;
+//                     if(mp[s[i]] > 0){
+//                         count++;
+//                     }
+//                     i++;
+//                 }
+//             }
+//             j++;
+//         }
+
+//         if(minLen != INT_MAX){
+//             return s.substr(start, minLen);
+//         }
+//         else{
+//             return "";
+//         }
 //     }
 // };
+

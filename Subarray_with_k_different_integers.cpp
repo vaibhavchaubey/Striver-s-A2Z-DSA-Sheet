@@ -37,7 +37,7 @@ A subarray is a contiguous part of an array. */
 
 
 
-/* Solution 3: Sliding Window */
+/* Solution 2: Sliding Window */
 // Time Complexity: O(2*N)
 // Space Complexity: O(k)
 
