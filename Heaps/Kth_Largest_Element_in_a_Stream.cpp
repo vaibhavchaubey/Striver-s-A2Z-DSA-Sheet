@@ -9,7 +9,7 @@ int add(int val) Appends the integer val to the stream and returns the element r
 
 
 /* Solution: Using priority queue */
-// Time complexity : O(N * log k) + O(M log k)       
+// Time complexity : O(N * log k) + O(M * log k)       
 // Space complexity : O(k)  
 
 
