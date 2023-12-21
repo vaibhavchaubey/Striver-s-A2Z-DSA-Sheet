@@ -82,7 +82,7 @@ will be added i.e (5 - 0 + 1) = 6 subarrays namely {6}, {5,6}, {4,5,6}, {3,4,5,6
 //                 left++;
 //             }
 
-//             count +=  right - left + 1;
+//             count +=  right - left + 1;                  // this counts the subarrays in that window
 //             right++;
 //         }
 

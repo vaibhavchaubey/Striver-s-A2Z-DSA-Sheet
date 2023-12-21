@@ -75,7 +75,7 @@ string till the end. So at each index, if we are traversing the whole string aga
 // 				start = i;
 // 			}
 // 			k = 0; 
-// 			j = i + 1;
+// 			j = i;
 			
 // 		}
 // 		j++;
