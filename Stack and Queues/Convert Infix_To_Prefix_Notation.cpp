@@ -56,6 +56,7 @@ string infixToPostfix(string str)
 
         if (isdigit(str[i]) || isalpha(str[i]))
         {
+            // Operand, add to output
             res += str[i];
         }
         else if (str[i] == '(')
@@ -64,6 +65,7 @@ string infixToPostfix(string str)
         }
         else if (str[i] == ')')
         {
+            // Pop operators from the stack and add to output until '(' is encountered
             while (!st.empty() && st.top() != '(')
             {
                 res += st.top();
@@ -76,6 +78,7 @@ string infixToPostfix(string str)
         }
         else
         {
+            // Operator encountered
             if (isOperator(st.top()))
             {
                 if (str[i] == '^')
@@ -100,6 +103,7 @@ string infixToPostfix(string str)
         }
     }
 
+    // Pop any remaining operators from the stack and add to output
     while (!st.empty())
     {
         res += st.top();

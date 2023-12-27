@@ -37,21 +37,24 @@ to postfix expression. */
 // 		/* OR */
 
 // 		if(isdigit(exp[i]) || isalpha(exp[i])){
+//             // Operand, add to output
 // 			ans += exp[i];
 // 		}
 // 		else if(exp[i] == '('){
 // 			st.push(exp[i]);
 // 		}
 // 		else if(exp[i] == ')'){
+//              // Pop operators from the stack and add to output until '(' is encountered
 // 			while(!st.empty() && st.top() != '('){
 // 				ans += st.top();
 // 				st.pop();
 // 			}
 // 			if(!st.empty()){
-// 				st.pop();
+// 				st.pop();                        // Remove '(' from the stack
 // 			}
 // 		}
 // 		else{
+//             // Operator encountered
 // 			while(!st.empty() && prec(st.top()) >= prec(exp[i])){
 // 				ans += st.top();
 // 				st.pop();
@@ -60,6 +63,7 @@ to postfix expression. */
 // 		}
 // 	}
 
+//     // Pop any remaining operators from the stack and add to output
 // 	while(!st.empty()){
 // 		ans += st.top();
 // 		st.pop();
