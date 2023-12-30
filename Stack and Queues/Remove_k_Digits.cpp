@@ -22,6 +22,7 @@ possible integer after removing k digits from num. */
 //                 st.pop();
 //                 k--;
 //             }
+//             // inorder to not push the '0' in the empty stack
 //             if(!st.empty() || num[i] != '0'){
 //                 st.push(num[i]);
 //             }
@@ -48,5 +49,3 @@ possible integer after removing k digits from num. */
 //         return ans;
 //     }
 // };
-
-
