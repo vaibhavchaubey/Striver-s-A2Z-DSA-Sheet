@@ -17,22 +17,23 @@ Space Complexity: O(1) */
 //             return head;
 //         } 
         
-//         ListNode* prevptr = NULL;
-//         ListNode* currptr = head;
-//         ListNode* nextptr;
-//         ListNode* check = currptr;
+//         // check if k nodes exist or not
+//         ListNode* check = head;
 //         int count = 1;
         
-//         while(check->next != NULL && count <= k){
+//         while(check->next != NULL && count < k){
 //             count++;
 //             check = check->next;
 //         }
 //         if(count < k){
 //             return head;
 //         }
-        
-//         count = 0;
-//         while(currptr != NULL && count < k){
+
+//         count = 1;
+//         ListNode* prevptr = NULL;
+//         ListNode* currptr = head;
+//         ListNode* nextptr;
+//         while(currptr != NULL && count <= k){
 //             nextptr = currptr->next;
 //             currptr->next = prevptr;
             

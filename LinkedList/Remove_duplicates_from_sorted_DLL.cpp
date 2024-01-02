@@ -5,7 +5,7 @@ and the nodes have reference to both the previous and the next nodes in the sequ
 You are given a sorted doubly linked list of size 'n' Remove all the duplicate nodes present in the linked list. */
 
 
-/* Solution 1: */
+/* Solution: */
 /* Approach: If the next element is the same as the current one, try adjusting the links to remove the next element */
 // Time Complexity : O(N)
 // Space Complexity : O(1)
