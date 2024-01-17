@@ -77,7 +77,7 @@ You can return the answer in any order. */
 
 
 /* Solution 3: Using Hashing */
-// Time Complexity: O(NlogN)
+// Time Complexity: O(N)
 // Space Complexity: O(N) 
 
 
