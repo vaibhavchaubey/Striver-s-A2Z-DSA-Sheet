@@ -44,3 +44,48 @@ leading to an overall complexity of O(N logK). */
 //         return pq.top();
 //     }
 // };
+
+
+
+/* Solution 3: Using Quickselect Algorithm */
+// Time Complexity: Best & Average Case - O(N logN)  ,   Worst Case - O(N*N)
+// Space Complexity: O(1)  
+
+
+// class Solution {
+// public:
+//     int partition(vector<int>& nums, int l, int r){
+//         int pivot = nums[r];        // any element of arr can be taken as pivot (Here we have taken last element)
+//         int i = l - 1;
+//         for(int j = l; j < r; j++){
+//             if(nums[j] < pivot){
+//                 i++;
+//                 swap(nums[i], nums[j]);
+//             }
+//         }
+
+//         // here i will be denoting the last number which is less than pivot
+//         swap(nums[i+1], nums[r]);
+//         return i+1;
+//     }
+//     int findKthLargest(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         int l = 0, r = n - 1;
+//         while(true){
+//             int pi = partition(nums, l, r);
+
+//             if(n - k == pi){
+//                 return nums[pi];
+//             }
+//             else if(n - k < pi){
+//                 r = pi - 1;
+//             }
+//             else{
+//                 l = pi + 1;
+//             }
+
+//         }
+
+//         return -1;
+//     }
+// };
