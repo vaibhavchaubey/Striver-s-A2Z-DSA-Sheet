@@ -5,7 +5,7 @@ element in the array represents your maximum jump length at that position.
 Return true if you can reach the last index, or false otherwise. */
 
 
-/* Solution: 1 */
+/* Solution: */
 // Time Complexity: O(N)
 // Space Complexity: O(N)
 
