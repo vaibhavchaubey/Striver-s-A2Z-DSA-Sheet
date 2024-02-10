@@ -8,7 +8,7 @@ At any given instance of time, same platform can not be used for both departure 
 In such cases, we need different platforms. */
 
 
-/* Solution 1:  Using Recursion */
+/* Solution:  Using Recursion */
 /* Approach: The idea is to consider all events in sorted order. Once the events are in sorted order, trace the number of trains 
 at any time keeping track of trains that have arrived, but not departed. */
 // Time Complexity: O(N logN)                  
