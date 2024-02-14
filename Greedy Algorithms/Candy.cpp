@@ -18,7 +18,7 @@ Now, we iterate through the ratings array from the beginning to the end. For eac
 their rating with the one to the left. If it's higher, we update the candies array for that child to be one more than 
 the child on the left. This takes care of the second condition but only accounts for the child's left neighbor.
 
-3) ackward Pass: Right to Left
+3) Backward Pass: Right to Left
 After the forward pass, we loop through the array again but in the reverse direction. This time, we compare each child's 
 rating with the child to their right. If the rating is higher, we need to make sure the child has more candies than the 
 right neighbor. So, we update the candies array for that child to be the maximum between its current number of candies 
