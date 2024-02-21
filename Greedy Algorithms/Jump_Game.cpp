@@ -7,7 +7,7 @@ Return true if you can reach the last index, or false otherwise. */
 
 /* Solution: */
 // Time Complexity: O(N)
-// Space Complexity: O(N)
+// Space Complexity: O(1)
 
 
 /* The question states "each element in the array represents your maximum jump length at that position."
