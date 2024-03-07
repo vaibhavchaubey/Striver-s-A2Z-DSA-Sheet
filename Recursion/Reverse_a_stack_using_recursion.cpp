@@ -10,39 +10,31 @@ Note: You are not allowed to use any extra space other than the internal stack s
 // Space Complexity: O(N)                   // recursion stack
 
 
-// #include <bits/stdc++.h> 
-// void sortedInsert(stack<int> &s, int key){
-// 	if(s.empty() || key > s.top()){
-// 		s.push(key);
-// 		return;
-// 	}
+// void insertAtBottom(stack<int> &stack, int ele){
+//     if(stack.empty()){
+//         stack.push(ele);
+//         return;
+//     }
 
-// 	int top = s.top();
-// 	s.pop();
+//     int top = stack.top();
+//     stack.pop();
 
-// 	// Recur for the remaining elements in the stack.
-// 	sortedInsert(s, key);
+//     // Recursively call insertAtBottom to insert the element at the bottom
+//     insertAtBottom(stack, ele);
 
-// 	// Insert the popped element back into the stack
-// 	s.push(top);
+//     // Push the removed top element back onto the stack
+//     stack.push(top);
 // }
-// void sortStackHelper(stack<int> &s){
-// 	if(s.empty()){
-// 		return;
-// 	}
+// void reverseStack(stack<int> &stack) {
+//     if(stack.empty()){
+//         return;
+//     }
+    
+//     int top = stack.top();
+//     stack.pop();
 
-// 	int top = s.top();
-// 	s.pop();
-	
-// 	// Recur for the remaining elements in the stack.
-// 	sortStackHelper(s);
-
-// 	// Insert the popped element back into the sorted s.
-// 	sortedInsert(s, top);
-// }
-// stack<int> sortStack(stack<int> &s)
-// {
-// 	sortStackHelper(s);
-
-// 	return s;
+//     // Recursively call reverseStack to reverse the remaining elements
+//     reverseStack(stack);
+//     // After reversing the remaining elements, insert the removed top element at the bottom
+//     insertAtBottom(stack, top);
 // }
