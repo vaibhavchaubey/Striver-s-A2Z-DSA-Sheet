@@ -22,7 +22,7 @@ back into the stack in a sorted position.
 */
 
 // Time Complexity: O(N * N)
-// Space Complexity: O(N)
+// Space Complexity: O(N)                   // recursion stack
 
 
 // #include <bits/stdc++.h> 
