@@ -1,53 +1,81 @@
-/* Leetcode  Submission   (216. Combination Sum III)  */
+/* Leetcode  Submission   (17. Letter Combinations of a Phone Number)  */
 
 
-/* Problem Statement: Find all valid combinations of k numbers that sum up to n such that the following 
-conditions are true:
-    Only numbers 1 through 9 are used.
-    Each number is used at most once.
-Return a list of all possible valid combinations. The list must not contain the same combination twice, 
-and the combinations may be returned in any order. */
+/* Problem Statement: Given a string containing digits from 2-9 inclusive, return all possible 
+letter combinations that the number could represent. Return the answer in any order.
+A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 
+1 does not map to any letters. */
 
 
-/* Solution: Using Recursion */
+/* Solution 1: Solved using String + Hash Table     (Iterative Approach) */
+/* Time Complexity: O(3^N × 4^M) 
+where N is the number of digits which have 3 letters( ex: 2,3,4) assigned to it 
+and M is the number of digits which has 4 letters(ex: 7,9) assigned to it.
 
-/* Time Complexity: O(2^k)            // where 'k' is the number of elements in the combination.
-The function helper is recursively called with num increasing from 1 to 9. 
-So, the time complexity of the helper function is O(9).
-Within each recursive call, there are two branches: one where the current number is included in the 
-combination and one where it is not included.
-
-Space Complexity:  O(2^k)  */
+Space Complexity: O(3^N × 4^M) */
 
 
 // class Solution {
 // public:
-//     void helper(int num, int k, int sum, vector<int>& arr, vector<vector<int>>& ans){
-//         if(k == 0){
-//             if(sum == 0){
-//                 ans.push_back(arr);
+//     vector<string> letterCombinations(string digits) {
+//         vector<string> ans;
+//         if(digits.empty()){
+//             return ans;
+//         }
+
+//         vector<string> pad = {"", "", "abc", "def", "ghi", "jkl","mno", "pqrs", "tuv", "wxyz"};
+
+//         ans.push_back("");
+        
+//         for(auto digit : digits){
+//             vector<string> temp;
+//             for(auto candidate : pad[digit - '0']){
+//                 for(auto s : ans){
+//                     temp.push_back(s + candidate);
+//                 }
 //             }
-//             return;
-//         }
-//         if(num > 9){
-//             return;
+//             ans.clear();
+//             ans = temp;
 //         }
 
-//         // pick up the element
-//         if(num <= sum){
-//             arr.push_back(num);
-//             helper(num+1, k-1, sum-num, arr, ans);
-//             arr.pop_back();
-//         }
-
-//         // not picking the element
-//         helper(num+1, k, sum, arr, ans);
+//         return ans;
 //     }
-//     vector<vector<int>> combinationSum3(int k, int n) {
-//         vector<int> arr;
-//         vector<vector<int>> ans;
+// };
 
-//         helper(1, k, n, arr, ans);
+
+
+/* Solution 2: Using String + Backtracking + Hash Table    (Recursive Approach) */
+/* Time Complexity: O(3^N × 4^M) 
+where N is the number of digits which have 3 letters( ex: 2,3,4) assigned to it 
+and M is the number of digits which has 4 letters(ex: 7,9) assigned to it.
+
+Space Complexity: O(3^N × 4^M) */
+
+
+// class Solution {
+// public:
+//     void helper(int index, string temp, string& digits, vector<string>& pad, vector<string>& ans){
+//         if(index == digits.size()){
+//             ans.push_back(temp);
+//             return;
+//         }
+
+//         string value = pad[digits[index] - '0'];
+//         for(int i = 0; i < value.size(); i++){
+//             temp.push_back(value[i]);
+//             helper(index+1, temp, digits, pad, ans);
+//             temp.pop_back();
+//         }
+//     }
+//     vector<string> letterCombinations(string digits) {
+//         vector<string> ans;
+//         if(digits.empty()){
+//             return ans;
+//         }
+
+//         vector<string> pad = {"", "", "abc", "def", "ghi", "jkl","mno", "pqrs", "tuv", "wxyz"};
+
+//         helper(0, "", digits, pad, ans);     
 
 //         return ans;
 //     }
