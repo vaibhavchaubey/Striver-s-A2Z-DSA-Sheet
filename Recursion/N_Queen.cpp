@@ -96,7 +96,7 @@ hashing to maintain a list to check whether that position can be the right one o
 /* Time Complexity: (N! * N) 
 Exponential in nature, since we are trying out all ways.
 
-Space Complexity: O(N^2)    */
+Space Complexity: O(N)    */
 
 
 // class Solution {
