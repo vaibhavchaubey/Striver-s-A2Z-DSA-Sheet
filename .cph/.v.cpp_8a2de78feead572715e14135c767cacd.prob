@@ -1,1 +1,0 @@
-{"name":"Local: v","url":"d:\\Striver\\A2Z DSA Sheet\\v.cpp","tests":[{"id":1697357652213,"input":"7 8\n10 1 2 7 6 1 5","output":"4"},{"id":1697445824081,"input":"5 5 \n2 5 2 1 2","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Striver\\A2Z DSA Sheet\\v.cpp","group":"local","local":true}
