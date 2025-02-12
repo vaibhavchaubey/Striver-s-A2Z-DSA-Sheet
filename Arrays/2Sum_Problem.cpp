@@ -1,15 +1,13 @@
 /* Leetcode  Submission    (1. Two Sum) */
 
-/* Problem Statement: Given an array of integers nums and an integer target, return indices of the two 
+/* Problem Statement: Given an array of integers nums and an integer target, return indices of the two
 numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order. */
 
-
 /* Solution 1: Naive Approach (Brute Force) */
 // Time Complexity: O(N^2)
 // Space Complexity: O(1)
-
 
 // class Solution {
 // public:
@@ -30,12 +28,9 @@ You can return the answer in any order. */
 //     }
 // };
 
-
-
 /* Solution 2: Two-Pointer Approach */
 // Time Complexity: O(N + NlogN)
-// Space Complexity: O(N) 
-
+// Space Complexity: O(N)
 
 // class Solution {
 // public:
@@ -46,7 +41,7 @@ You can return the answer in any order. */
 //         sort(store.begin(), store.end());
 //         int left = 0, right = n-1;
 //         int n1, n2;
-        
+
 //         while(left < right){
 //             if(store[left] + store[right] == target){
 //                 n1 = store[left];
@@ -69,17 +64,14 @@ You can return the answer in any order. */
 //                 ans.push_back(i);
 //             }
 //         }
-        
+
 //         return ans;
 //     }
 // };
 
-
-
 /* Solution 3: Using Hashing */
 // Time Complexity: O(N)
-// Space Complexity: O(N) 
-
+// Space Complexity: O(N)
 
 // class Solution {
 // public:
