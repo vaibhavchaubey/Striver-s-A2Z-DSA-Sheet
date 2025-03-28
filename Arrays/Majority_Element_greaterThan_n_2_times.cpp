@@ -1,14 +1,13 @@
 /* Leetcode  Submission    (169. Majority Element) */
+/* Also do Leetcode   (2780. Minimum Index of a Valid Split) */
 
 /* Problem Statement: Given an array nums of size n, return the majority element.
-The majority element is the element that appears more than ⌊n / 2⌋ times. 
+The majority element is the element that appears more than ⌊n / 2⌋ times.
 You may assume that the majority element always exists in the array. */
-
 
 /* Solution 1: Naive Approach (Brute Force) */
 // Time Complexity: O(N^2)
 // Space Complexity: O(1)
-
 
 // class Solution {
 // public:
@@ -30,12 +29,9 @@ You may assume that the majority element always exists in the array. */
 //     }
 // };
 
-
-
 /* Solution 2: Sorting */
 // Time Complexity: O(NlogN)
-// Space Complexity: O(1) 
-
+// Space Complexity: O(1)
 
 // class Solution {
 // public:
@@ -47,12 +43,9 @@ You may assume that the majority element always exists in the array. */
 //     }
 // };
 
-
-
 /* Solution 3: Using Hashing */
 // Time Complexity: O(NlogN)
-// Space Complexity: O(N) 
-
+// Space Complexity: O(N)
 
 // class Solution {
 // public:
@@ -70,12 +63,9 @@ You may assume that the majority element always exists in the array. */
 //     }
 // };
 
-
-
 /* Solution 4: Moore’s Voting Algorithm */
 // Time Complexity: O(N)
-// Space Complexity: O(1) 
-
+// Space Complexity: O(1)
 
 // class Solution {
 // public:
@@ -94,23 +84,19 @@ You may assume that the majority element always exists in the array. */
 //                 count--;
 //             }
 //         }
-        
+
 //         return candidate;
 //     }
 // };
 
-
-
 /* GFG  Submission    (Majority Element) */
 
-/* Problem Statement: Given an array A of N elements. Find the majority element in the array. 
+/* Problem Statement: Given an array A of N elements. Find the majority element in the array.
 A majority element in an array A of size N is an element that appears more than N/2 times in the array. */
-
 
 /* Solution: Moore’s Voting Algorithm */
 // Time Complexity: O(N)
 // Space Complexity: O(1)
-
 
 // class Solution{
 //   public:
@@ -133,19 +119,19 @@ A majority element in an array A of size N is an element that appears more than 
 //                 count--;
 //             }
 //         }
-        
-//         int cnt = 0; 
+
+//         int cnt = 0;
 //         for(int i = 0; i < size; i++){
 //             if(a[i] == candidate){
 //                 cnt++;
 //             }
 //         }
-        
+
 //         if(cnt > size/2){
 //             return candidate;
 //         }
-        
+
 //         return -1;
-        
+
 //     }
 // };
