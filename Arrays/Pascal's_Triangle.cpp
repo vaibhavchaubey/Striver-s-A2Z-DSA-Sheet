@@ -5,11 +5,9 @@
 /* Problem Statement: Given an integer numRows, return the first numRows of Pascal's triangle.
 In Pascal's triangle, each number is the sum of the two numbers directly above it. */
 
-
 /* Solution: */
 // Time Complexity: O(N * N)
 // Space Complexity: O(1)
-
 
 // class Solution {
 // public:
@@ -39,23 +37,20 @@ In Pascal's triangle, each number is the sum of the two numbers directly above i
 //     }
 // };
 
-
 /*                                  OR                              */
-
 
 /* Solution: */
 // Time Complexity: O(N * N)
 // Space Complexity: O(1)
 
-
 // class Solution {
 // public:
 //     vector<vector<int>> generate(int numRows) {
 //         vector<vector<int>> ans(numRows);
-        
+
 //         for(int i = 0; i < numRows; i++){
 //             ans[i].resize(i+1);
-//             for(int j = 0; j <= i; j++){    
+//             for(int j = 0; j <= i; j++){
 //                 if(j == 0 || j == i){       // for first and last element
 //                     ans[i][j] = 1;
 //                 }
@@ -64,38 +59,31 @@ In Pascal's triangle, each number is the sum of the two numbers directly above i
 //                 }
 //             }
 //         }
-        
+
 //         return ans;
 //     }
 // };
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 /* Variation 1: Given row number r and column number c. Print the element at position (r, c) in Pascal’s triangle. */
 /* We have an easier formula to find out the element i.e. r-1Cc-1. */
 
-
-/* Naive Approach: 
-We can separately calculate n!, r!, (n-r)! and using their values we can calculate nCr. 
+/* Naive Approach:
+We can separately calculate n!, r!, (n-r)! and using their values we can calculate nCr.
 This is an extremely naive way to calculate. The time complexity will be O(n)+O(r)+O(n-r). */
-
-
 
 /* Optimal Approach
 Approach:
 The steps are as follows:
 1) First, we will consider r-1 as n and c-1 as r.
-2) After that, we will simply calculate the value of the combination using a loop. 
+2) After that, we will simply calculate the value of the combination using a loop.
 3) The loop will run from 0 to r. And in each iteration, we will multiply (n-i) with the result and divide the result by (i+1).
 4) Finally, the calculated value of the combination will be our answer. */
 
-
 /* Solution: */
 // Time Complexity: O(c)      where c = given column number. Reason: We are running a loop for r times, where r is c-1.
-// Space Complexity: O(1)    
-
+// Space Complexity: O(1)
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -123,27 +111,21 @@ The steps are as follows:
 //     int element = pascalTriangle(r, c);
 //     cout << "The element at position (r,c) is: " << element << "n";
 
-
 //     return 0;
 // }
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 /* Variation 2: Given the row number n. Print the n-th row of Pascal’s triangle. */
 
-
 /* Naive Approach
 In this approach, for every column from 1 to n, we will calculate the element (n, c)
-(where n is the given row number and c is the column number that will vary from 1 to n) using the previous method. 
+(where n is the given row number and c is the column number that will vary from 1 to n) using the previous method.
 Thus, we will print the row.   */
-
 
 /* Solution 1: */
 // Time Complexity: O(n*r)       where n is the given row number, and r is the column index which can vary from 0 to n-1.
-// Space Complexity: O(1) 
-
+// Space Complexity: O(1)
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -173,8 +155,6 @@ Thus, we will print the row.   */
 //     return 0;
 // }
 
-
-
 /* Optimal Approach
 Approach:
 The steps are as follows:
@@ -183,11 +163,9 @@ The steps are as follows:
 3) Inside the loop, we will use the above-said formula to print the element. We will multiply the previous answer by (n-i) and then divide it by i itself.
 4) Thus, the entire row will be printed. */
 
-
 /* Solution 2: */
 // Time Complexity: O(N)                    where N = given row number.
-// Space Complexity: O(1) 
-
+// Space Complexity: O(1)
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -213,12 +191,9 @@ The steps are as follows:
 //     return 0;
 // }
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 /* Variation 3: Given the number of rows n. Print the first n rows of Pascal’s triangle. (Means print the entire pascal triangle) */
-
 
 /* Naive Approach
 Approach:
@@ -226,17 +201,15 @@ The steps are as follows:
 1) First, we will run a loop(say row) from 1 to n.
 2) We will use a loop(say col) to iterate over each column i.e. from 1 to n. And inside the nested loops, we will do the following steps:
     1) First, we will consider row-1 as n and col-1 as r.
-    2) After that, we will simply calculate the value of the combination using a loop. 
+    2) After that, we will simply calculate the value of the combination using a loop.
     3) The loop will run from 0 to r. And in each iteration, we will multiply (n-i) with the result and divide the result by (i+1).
     4) Finally, we will add the element to a temporary list.
 3) After calculating all the elements for all columns of a row, we will add the temporary list to our final answer list.
 4) Finally, we will return the answer list. */
 
-
 /* Solution 1: */
 // Time Complexity: O(n*n*r) ~ O(n^3)               where n = number of rows, and r = column index.
-// Space Complexity: O(1) 
-
+// Space Complexity: O(1)
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -257,11 +230,11 @@ The steps are as follows:
 
 //     //Store the entire pascal's triangle:
 //     for (int row = 1; row <= n; row++) {
-//         vector<int> tempLst; // temporary list
+//         vector<int> tempList; // temporary list
 //         for (int col = 1; col <= row; col++) {
-//             tempLst.push_back(nCr(row - 1, col - 1));
+//             tempList.push_back(nCr(row - 1, col - 1));
 //         }
-//         ans.push_back(tempLst);
+//         ans.push_back(tempList);
 //     }
 //     return ans;
 // }
@@ -279,18 +252,14 @@ The steps are as follows:
 //     return 0;
 // }
 
-
-
 /* Optimal Approach
-Now, in the optimal approach of variation 2, we have learned how to generate a row in O(n) time complexity. 
-So, in order to optimize the overall time complexity, we will be using that approach for every row. 
+Now, in the optimal approach of variation 2, we have learned how to generate a row in O(n) time complexity.
+So, in order to optimize the overall time complexity, we will be using that approach for every row.
 Thus the total time complexity will reduce. */
-
 
 /* Solution 2: */
 // Time Complexity: O(N * N)       where N = number of rows
-// Space Complexity: O(1) 
-
+// Space Complexity: O(1)
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -331,7 +300,3 @@ Thus the total time complexity will reduce. */
 //     }
 //     return 0;
 // }
-
-
-
-
