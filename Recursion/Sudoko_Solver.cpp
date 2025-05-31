@@ -17,9 +17,6 @@ Space Complexity : O(1)  */
 
 // class Solution {
 // public:
-//     void solveSudoku(vector<vector<char>>& board) {
-//         solve(board);
-//     }
 //     bool solve(vector<vector<char>>& board){
 //         for(int i = 0; i < board.size(); i++){
 //             for(int j = 0; j < board[0].size(); j++){
@@ -55,5 +52,8 @@ Space Complexity : O(1)  */
 //             }
 //         }
 //         return true;
+//     }
+//     void solveSudoku(vector<vector<char>>& board) {
+//         solve(board);
 //     }
 // };
