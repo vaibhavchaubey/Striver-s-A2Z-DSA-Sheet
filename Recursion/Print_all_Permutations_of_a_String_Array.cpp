@@ -1,15 +1,11 @@
 /* Leetcode  Submission   (46. Permutations)  */
 
-
-/* Problem Statement: Given an array nums of distinct integers, return all the possible permutations. 
+/* Problem Statement: Given an array nums of distinct integers, return all the possible permutations.
 You can return the answer in any order. */
 
-
-
 /* Solution 1:  */
-// Time Complexity:  O(N! x N)
+// Time Complexity:  O(N! * N)
 // Space Complexity:  O(N) + O(N)
-
 
 // class Solution {
 // public:
@@ -18,7 +14,7 @@ You can return the answer in any order. */
 //             ans.push_back(ds);
 //             return;
 //         }
-        
+
 //         for(int i = 0; i < nums.size(); i++){
 //             if(freq[i] == 0){               // element at index i is not taken
 //                 ds.push_back(nums[i]);
@@ -40,12 +36,9 @@ You can return the answer in any order. */
 //     }
 // };
 
-
-
 /* Solution 2:  */
-// Time Complexity:  O(N! x N)
+// Time Complexity:  O(N! * N)
 // Space Complexity:  O(1)
-
 
 // class Solution {
 // public:
@@ -54,7 +47,7 @@ You can return the answer in any order. */
 //             ans.push_back(nums);
 //             return;
 //         }
-        
+
 //         for(int i = index; i < nums.size(); i++){
 //             swap(nums[index], nums[i]);
 //             recurPermute(index+1, nums, ans);
