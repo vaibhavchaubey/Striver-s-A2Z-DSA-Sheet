@@ -3,12 +3,9 @@
 /* Problem Statement: Given a binary array nums and an integer goal, return the number of non-empty subarrays with a sum goal.
 A subarray is a contiguous part of the array. */
 
-
-
 /* Solution 1: Brute Force */
 // Time Complexity: O(N * N)
 // Space Complexity: O(1)
-
 
 // class Solution {
 // public:
@@ -29,13 +26,9 @@ A subarray is a contiguous part of the array. */
 //     }
 // };
 
-
-
-
 /* Solution 2: Using Hashmap */
 // Time Complexity: O(N)
 // Space Complexity: O(N)
-
 
 // class Solution {
 // public:
@@ -44,7 +37,7 @@ A subarray is a contiguous part of the array. */
 //         int cnt = 0, sum = 0;
 //         unordered_map<int, int> mp;             // sum, count
 //         for(int i = 0; i < n; i++){
-//             sum += nums[i];;
+//             sum += nums[i];
 //             if(sum == goal){
 //                 cnt++;
 //             }
@@ -56,12 +49,9 @@ A subarray is a contiguous part of the array. */
 //     }
 // };
 
-
-
 /* Solution 3: Sliding Window */
 // Time Complexity: O(2*N)
 // Space Complexity: O(1)
-
 
 /* Intuition
 --> Count total number of subarray with sum atmost GOAL and GOAL-1.
@@ -72,12 +62,11 @@ QUESTION : How to count total number of subarray with atmost sum = GOAL.
 ANS: (Simple Keep adding length of window size whenever window size is changed) Count=(right-left+1);
 
 More Clarify Above ans:
-As we iterate through an array ,one by one elements to the existing array adds up and as an element is added to the existing 
+As we iterate through an array ,one by one elements to the existing array adds up and as an element is added to the existing
 array then it contributes to (right-left+1) subarrays and so till the current j pointer we will get all the possible subarrays.
-For an example : if array is {1,2,3,4,5} then it will have n(n+1)/2 subarrays i.e 5*(6)/2 = 15 subarrays and lets suppose we add 
-one more element to existing array(ele:6) then here right = 5 and lets take left = 0, then total (right-left+1) extra subarrays 
+For an example : if array is {1,2,3,4,5} then it will have n(n+1)/2 subarrays i.e 5*(6)/2 = 15 subarrays and lets suppose we add
+one more element to existing array(ele:6) then here right = 5 and lets take left = 0, then total (right-left+1) extra subarrays
 will be added i.e (5 - 0 + 1) = 6 subarrays namely {6}, {5,6}, {4,5,6}, {3,4,5,6}, {2,3,4,5,6}, {1,2,3,4,5,6} respectively. */
-
 
 // class Solution {
 // public:
@@ -97,7 +86,7 @@ will be added i.e (5 - 0 + 1) = 6 subarrays namely {6}, {5,6}, {4,5,6}, {3,4,5,6
 
 //             count += (j - i + 1);       // this counts the subarrays in that window
 //             j++;
-//         } 
+//         }
 
 //         return count;
 //     }
