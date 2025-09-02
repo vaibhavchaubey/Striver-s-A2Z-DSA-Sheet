@@ -3,33 +3,37 @@ Input => Infix Expression
 Output => Prefix Expression */
 
 /*
-x+y*z/w+u     - Input
-++x/*yzwu     - Ans
+(a-b/c)*(a/k-l)    - Input
+*-a/bc-/akl       - Ans
+*/
+
+/* STEPS TO CONVERT INFIX TO PREFIX EXPRESSION
+1) Reverse the infix expression
+
+2) Replace ( with ) and vice versa
+
+3) Get the postfix expression of the modified expression
+
+4) Reverse the postfix expression
 */
 
 /* Solution: */
 // Time Complexity: O(N)
 // Space Complexity: O(N)
 
-
 #include <bits/stdc++.h>
 using namespace std;
-
-bool isOperator(char ch)
+int prec(char ch)
 {
-    return (!isdigit(ch) && !isalpha(ch));
-}
-int prec(char c)
-{
-    if (c == '^')
+    if (ch == '^')
     {
         return 3;
     }
-    else if (c == '*' || c == '/')
+    else if (ch == '*' || ch == '/')
     {
         return 2;
     }
-    else if (c == '+' || c == '-')
+    else if (ch == '+' || ch == '-')
     {
         return 1;
     }
@@ -39,99 +43,85 @@ int prec(char c)
     }
 }
 
-string infixToPostfix(string str)
+string infixToPostfix(string s)
 {
-    str = '(' + str + ')';
     stack<char> st;
-    string res;
+    string ans;
+    int n = s.size();
 
-    for (int i = 0; i < str.size(); i++)
+    for (int i = 0; i < n; i++)
     {
-        // if ((str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z'))
+        // if ((s[i] >= '0' && s[i] <= '9') || (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
         // {
-        //     res += str[i];
+        //     ans += s[i];
         // }
 
         /* OR */
 
-        if (isdigit(str[i]) || isalpha(str[i]))
+        // if (isdigit(s[i]) || isalpha(s[i]))
+        // {
+        //     // Operand, add to output
+        //     ans += s[i];
+        // }
+
+        /* OR */
+
+        if (isalnum(s[i]))
         {
-            // Operand, add to output
-            res += str[i];
+            ans += s[i];
         }
-        else if (str[i] == '(')
+        else if (s[i] == '(')
         {
-            st.push(str[i]);
+            st.push(s[i]);
         }
-        else if (str[i] == ')')
+        else if (s[i] == ')')
         {
-            // Pop operators from the stack and add to output until '(' is encountered
             while (!st.empty() && st.top() != '(')
             {
-                res += st.top();
+                ans += st.top();
                 st.pop();
             }
-            if (!st.empty())
-            {
-                st.pop();                   // Remove '(' from the stack
-            }
+            st.pop();
         }
         else
         {
-            // Operator encountered
-            if (isOperator(st.top()))
+            while (!st.empty() && prec(st.top()) >= prec(s[i]))
             {
-                if (str[i] == '^')
-                {
-                    while (!st.empty() && prec(st.top()) >= prec(str[i]))
-                    {
-                        res += st.top();
-                        st.pop();
-                    }
-                }
-                else
-                {
-                    while (!st.empty() && prec(st.top()) > prec(str[i]))
-                    {
-                        res += st.top();
-                        st.pop();
-                    }
-                }
-                // Push current Operator on stack
-                st.push(str[i]);
+                ans += st.top();
+                st.pop();
             }
+            st.push(s[i]);
         }
     }
 
-    // Pop any remaining operators from the stack and add to output
     while (!st.empty())
     {
-        res += st.top();
+        ans += st.top();
         st.pop();
     }
 
-    return res;
+    return ans;
 }
 
-string infixToPrefix(string str)
+string infixToPrefix(string infix)
 {
     // Reverse infix
-    reverse(str.begin(), str.end());
+    reverse(infix.begin(), infix.end());
 
     // Replace ( with ) and vice versa
-    for (int i = 0; i < str.size(); i++)
+    for (int i = 0; i < infix.size(); i++)
     {
-        if (str[i] == '(')
+        if (infix[i] == '(')
         {
-            str[i] = ')';
+            infix[i] = ')';
         }
-        else if (str[i] == ')')
+        else if (infix[i] == ')')
         {
-            str[i] = '(';
+            infix[i] = '(';
         }
     }
 
-    string ans = infixToPostfix(str);
+    string ans = infixToPostfix(infix);
     // Reverse postfix
     reverse(ans.begin(), ans.end());
 
@@ -140,9 +130,7 @@ string infixToPrefix(string str)
 
 int main()
 {
-    string s = "x+y*z/w+u";
-
-    cout << infixToPrefix(s) << endl;                      //     ++x/*yzwu
-
+    string s = "(a-b/c)*(a/k-l)";
+    cout << infixToPrefix(s) << endl;
     return 0;
 }

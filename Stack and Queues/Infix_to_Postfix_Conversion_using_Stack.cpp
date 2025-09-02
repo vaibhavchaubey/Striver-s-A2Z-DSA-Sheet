@@ -1,14 +1,26 @@
 /* Codestudio  Submission    (Infix To Postfix) */
 
-/* Problem Statement: You are given a string 'exp' which is a valid infix expression. Convert the given infix expression 
+/* Problem Statement: You are given a string 'exp' which is a valid infix expression. Convert the given infix expression
 to postfix expression. */
 
+/* STEPS TO CONVERT INFIX TO POSTFIX EXPRESSION
+1) If Operand, print
 
+2) If '('
+    push it to the stack
+
+3) If ')'
+    pop from stack and print until '(' is found. Remove '(' also
+
+4) If Operator
+    pop from stack and print until an operator with less precedence is found
+
+5) pop from stack and print until stack is not empty
+*/
 
 /* Solution: */
 // Time Complexity: O(N)
-// Space Complexity: O(N) 
-
+// Space Complexity: O(N)
 
 // #include<bits/stdc++.h>
 // int prec(char ch){
@@ -72,10 +84,7 @@ to postfix expression. */
 // 	return ans;
 // }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 /* We are giving Infix Expression and Postfix Expression is coming Output
 Input => Infix Expression
@@ -88,8 +97,7 @@ abc/-ak/l-*        - Ans
 
 /* Solution: */
 // Time Complexity: O(N)
-// Space Complexity: O(N) 
-
+// Space Complexity: O(N)
 
 // #include <bits/stdc++.h>
 // using namespace std;
