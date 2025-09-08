@@ -1,4 +1,4 @@
-/* Codestudio  Submission    (Implement a priority queue) */
+/* Codestudio  Submission    (Min Heap Implementation) */
 
 /* Problem Statement: Implement the Min Heap data structure. For information about Heap click here. 
 Min heap is a tree data structure where the root element is the smallest of all th elements in the heap. 
