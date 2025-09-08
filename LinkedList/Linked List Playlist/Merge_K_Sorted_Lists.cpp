@@ -1,4 +1,5 @@
-/* Leetcode Submission          (23. Merge k Sorted Lists)    */
+/* Leetcode  Submission    (23. Merge k Sorted Lists) */
+
 
 /* Problem Statement: You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 Merge all the linked-lists into one sorted linked-list and return it. */
@@ -7,7 +8,7 @@ Merge all the linked-lists into one sorted linked-list and return it. */
 
 /* Solution 1: Merge lists one by one*/
 /* Convert merge k lists problem to merge 2 lists (k-1) times. */
-// Time complexity : O(kN) where k is the number of linked lists
+// Time complexity : N + 2N + 3N + ..... + kN = N(1 + 2 + 3 + ..... + k) = O(N * k(k+1)/2)      where k is the number of linked lists
 // Space complexity : O(1)
 
 
@@ -31,7 +32,7 @@ Merge all the linked-lists into one sorted linked-list and return it. */
 //             result->next = mergeTwoLists(l1,l2->next);
 //         }
 
-//         return result;        
+//         return result;
 //     }
 //     ListNode* mergeKLists(vector<ListNode*>& lists) {
 //         if(lists.size() == 0){
@@ -53,7 +54,48 @@ Merge all the linked-lists into one sorted linked-list and return it. */
 
 
 
-/* Solution 2: Merge with Divide And Conquer        (TO BE USED)   */
+/* Solution 2: Using Min Heap   */
+// Time complexity : O(K * logK) + O(K * N * 3logK) where k is the number of linked lists
+// Space complexity : O(K)
+
+
+// class Solution {
+// public:
+//     ListNode* mergeKLists(vector<ListNode*>& lists) {
+//         if(lists.size() == 0){
+//             return NULL;
+//         }
+//         if(lists.size() == 1){
+//             return lists[0];
+//         }
+
+//         priority_queue<pair<int, ListNode*>, vector<pair<int, ListNode*>>, greater<pair<int, ListNode*>>> pq;           // minHeap
+//         for(int i = 0; i < lists.size(); i++){               // O(K * logK)
+//             if(lists[i]){
+//                 pq.push({lists[i]->val, lists[i]});
+//             }
+//         }
+
+//         ListNode* dummy = new ListNode(-1);
+//         ListNode* temp = dummy;
+//         while(!pq.empty()){                          // Total elements => K * N   --->  O(K * N * 3logK)
+//             pair<int, ListNode*> p = pq.top();
+//             pq.pop();
+//             temp->next = p.second;
+//             if(p.second->next){
+//                 pq.push({p.second->next->val, p.second->next});
+//             }
+//             temp = temp->next;
+//         }
+
+//         return dummy->next;
+//     }
+// };
+
+
+
+
+/* Solution 3: Merge with Divide And Conquer        (TO BE USED)   */
 /* This approach walks alongside the one above but is improved a lot. We don't need to traverse most nodes many times repeatedly
 
 1) Pair up k lists and merge each pair.
@@ -62,8 +104,10 @@ Merge all the linked-lists into one sorted linked-list and return it. */
 
 Thus, we'll traverse almost N nodes per pairing and merging, and repeat this procedure about logk times */
 
+
 // Time complexity : O(N logK) where k is the number of linked lists
 // Space complexity : O(1)
+
 
 
 // class Solution {
@@ -75,7 +119,7 @@ Thus, we'll traverse almost N nodes per pairing and merging, and repeat this pro
 //         if(l2 == NULL){
 //             return l1;
 //         }
-        
+
 //         ListNode* result;
 //         if(l1->val < l2->val){
 //             result = l1;
@@ -85,7 +129,7 @@ Thus, we'll traverse almost N nodes per pairing and merging, and repeat this pro
 //             result = l2;
 //             result->next = mergeTwoLists(l1,l2->next);
 //         }
-        
+
 //         return result;
 //     }
 //     ListNode* mergeKLists(vector<ListNode*>& lists) {
@@ -103,7 +147,7 @@ Thus, we'll traverse almost N nodes per pairing and merging, and repeat this pro
 //             }
 //             interval *= 2;
 //         }
-        
+
 //         return lists[0];
 //     }
 // };
