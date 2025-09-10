@@ -69,7 +69,7 @@ Rank should be as small as possible. */
 
 
 /* Solution 3: Using Priority Queue (Min Heap) and Map  */
-// Time complexity : O(N)    
+// Time complexity : O(N logN)    
 // Space complexity : O(N) + O(N)             (minHeap, map)
 
 
@@ -105,7 +105,7 @@ Rank should be as small as possible. */
 
 
 /* Solution 4: Using Priority Queue (Min Heap)  */
-// Time complexity : O(N)    
+// Time complexity : O(N logN)    
 // Space complexity : O(N)             (minHeap)
 
 
