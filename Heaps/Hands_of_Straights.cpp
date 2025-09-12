@@ -75,7 +75,7 @@ can rearrange the cards, or false otherwise. */
 //             return false;
 //         }
 
-//         map<int, int> mp;                     // ele, count
+//         unordered_map<int, int> mp;                     // ele, count
 //         for(auto card : hand){
 //             mp[card]++;
 //         }
