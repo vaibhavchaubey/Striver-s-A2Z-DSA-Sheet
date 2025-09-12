@@ -9,6 +9,7 @@ The cost to connect two ropes is equal to sum of their lengths. We need to conne
 // Time complexity : O(N * log N)       
 // Space complexity : O(N)           
 
+/* If we replace the initial pushes with priority_queue<int, vector<int>, greater<int>> pq(arr, arr+n);, heap build is O(n) instead of O(n log n). Then overall still O(n log n) but slightly faster in practice. */
 
 // int minCost(int arr[], int n)
 // {
