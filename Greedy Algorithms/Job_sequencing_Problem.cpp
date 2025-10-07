@@ -8,53 +8,96 @@ Note: Jobs will be given in the form (Jobid, Deadline, Profit) associated with t
 job is the time before which job needs to be completed to earn the profit. */
 
 
-/* Solution: */
-// Time Complexity: O(N logN)    
-/* O(N log N ) for sorting the jobs in decreasing order of profit. O(N*M) since we are iterating through all N jobs and for every 
-job we are checking from the last deadline, say M deadlines in the worst case. */              
+
+/* Solution 1: */
+// Time Complexity: O(N*N)            
 // Space Complexity: O(M)
 
 
-// class Solution 
-// {
-//     public:
-//     static bool comp(Job a, Job b){
-//         return a.profit > b.profit;
-//     }
-//     //Function to find the maximum profit and the number of jobs done.
-//     vector<int> JobScheduling(Job arr[], int n) 
-//     { 
-//         //sort the jobs in descending order of profit
-//         sort(arr, arr+n, comp);
+// class Solution {
+//   public:
+//     vector<int> jobSequencing(vector<int> &deadline, vector<int> &profit) {
+//         int n = deadline.size();
+//         vector<pair<int, int>> jobs;
         
-//         int maxi = 0;
 //         for(int i = 0; i < n; i++){
-//             maxi = max(maxi, arr[i].dead);
+//             jobs.push_back({profit[i], deadline[i]});
 //         }
         
-// 	    //boolean array to keep track of free time slots.
-// 	    bool slot[maxi]; 
-	    
-// 	    // initializing all slots to free.
-//     	for (int i = 0; i < maxi; i++){
-//     		slot[i] = false;
+//         // sort the jobs based on profit in decreasing order
+//         sort(jobs.begin(), jobs.end(), greater<pair<int, int>>());
+        
+//         vector<bool> slots(n, false);
+        
+//         int jobsCount = 0, jobsProfit = 0;
+//         for(int i = 0; i < n; i++){
+//             int start = min(n, jobs[i].second) - 1;
+//             for(int j = start; j >= 0; j--){
+//                 if(slots[j] == false){
+//                     slots[j] = true;
+//                     jobsCount++;
+//                     jobsProfit += jobs[i].first;
+//                     break;
+//                 }
+//             }
 //         }
-    
-//         // vector<int> slot(maxi, 0);
-//         int countJobs = 0, jobProfit = 0;
-//     	for (int i = 0; i < n; i++) {
-//     	    // finding a free slot for current job (Note that we start from the last possible slot). 
-//     		for (int j = arr[i].dead-1; j >= 0; j--) {
-//     			if (slot[j] == false) {
-//     				slot[j] = true; 
-//     				countJobs++;
-//                     jobProfit += arr[i].profit;
-//     				break;
-//     			}
-//     		}
-//     	}
-    	
-//         return {countJobs, jobProfit};
-//     } 
+        
+//         return {jobsCount, jobsProfit};
+//     }
 // };
 
+
+
+
+/* Solution 2: Using Sorting and MinHeap  
+1) Store jobs as pairs of (Deadline, Profit).
+2) Sort Jobs array in ascending order of deadline.
+3) For each job in the sorted list:
+4) If the job can be scheduled within its deadline, push its profit into the heap.
+5) If the heap is full (equal to deadline), replace the existing lowest profit job with the current job if it has a higher profit.
+6) This ensures that we always keep the most profitable jobs within the available slots.
+7) Traverse through the heap and store the total profit and the count of jobs. */
+
+// Time Complexity: O(N * longN)            
+// Space Complexity: O(M)
+
+
+
+// class Solution {
+//   public:
+//     vector<int> jobSequencing(vector<int> &deadline, vector<int> &profit) {
+//         int n = deadline.size();
+//         vector<pair<int, int>> jobs;
+        
+//         for(int i = 0; i < n; i++){
+//             jobs.push_back({deadline[i], profit[i]});
+//         }
+        
+//         // sort the jobs based on deadline in ascending order
+//         sort(jobs.begin(), jobs.end());
+        
+//         priority_queue<int, vector<int>, greater<int>> pq;      // minHeap
+        
+//         for(int i = 0; i < n; i++){
+//             // if job can be scheduled within its deadline
+//             // here pq.size() --> time
+//             if(jobs[i].first > pq.size()){
+//                 pq.push(jobs[i].second);
+//             }
+//             // replace the job with the lowest profit
+//             else if(!pq.empty() && pq.top() < jobs[i].second){
+//                 pq.pop();
+//                 pq.push(jobs[i].second);
+//             }
+//         }
+        
+//         int jobsCount = 0, jobsProfit = 0;
+//         while(!pq.empty()){
+//             jobsProfit += pq.top();
+//             pq.pop();
+//             jobsCount++;
+//         }
+        
+//         return {jobsCount, jobsProfit};
+//     }
+// };

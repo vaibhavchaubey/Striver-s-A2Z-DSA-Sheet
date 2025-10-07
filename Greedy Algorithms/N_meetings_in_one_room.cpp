@@ -1,10 +1,8 @@
 /* GFG  Submission    (N meetings in one room) */
 
-/* Problem Statement: There is one meeting room in a firm. There are N meetings in the form of (start[i], end[i]) where start[i] 
-is start time of meeting i and end[i] is finish time of meeting i.
-What is the maximum number of meetings that can be accommodated in the meeting room when only one meeting can be held in the 
-meeting room at a particular time?
-Note: Start time of one chosen meeting can't be equal to the end time of the other chosen meeting. */
+/* Problem Statement: You are given timings of n meetings in the form of (start[i], end[i]) where start[i] is the start time of meeting i and end[i] is the finish time of meeting i. Return the maximum number of meetings that can be accommodated in a single meeting room, when only one meeting can be held in the meeting room at a particular time. 
+
+Note: The start time of one chosen meeting can't be equal to the end time of the other chosen meeting. */
 
 
 /* Solution: Greedy Algorithm */
@@ -16,34 +14,34 @@ other meetings such that the start time of the current meeting is greater than t
 // Space Complexity: O(N)
 
 
-// class Solution
-// {
-//     public:
+// class Solution {
+//   public:
 //     static bool comp(pair<int, int> &a, pair<int, int> &b){
 //         return a.second < b.second;
 //     }
-//     //Function to find the maximum number of meetings that can
-//     //be performed in a meeting room.
-//     int maxMeetings(int start[], int end[], int n)
-//     {
-//         vector<pair<int, int>> arr;         // start[i], end[i]
+//     // Function to find the maximum number of meetings that can
+//     // be performed in a meeting room.
+//     int maxMeetings(vector<int>& start, vector<int>& end) {
+//         int n = start.size();
+//         vector<pair<int, int>> meetings;
 //         for(int i = 0; i < n; i++){
-//             arr.push_back({start[i], end[i]});
+//             meetings.push_back({start[i], end[i]});
 //         }
         
-//         sort(arr.begin(), arr.end(), comp);
+//         sort(meetings.begin(), meetings.end(), comp);
         
 //         int ans = 1;
-//         int finish = arr[0].second;
+//         int finish =  meetings[0].second;
+        
 //         for(int i = 1; i < n; i++){
-//             if(arr[i].first > finish){
+//             if(meetings[i].first > finish){
 //                 ans++;
-//                 finish = arr[i].second;
+//                 finish = meetings[i].second;
 //             }
 //         }
         
-//         return ans;    
-//     }   
+//         return ans;
+//     }
 // };
 
 
