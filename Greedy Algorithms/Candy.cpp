@@ -7,7 +7,7 @@ You are giving candies to these children subjected to the following requirements
 Return the minimum number of candies you need to have to distribute the candies to the children. */
 
 
-/* Solution: Greedy Algorithm: Two-Pass Method */
+/* Solution 1: Greedy Algorithm: Two-Pass Method */
 /* 
 1) Initialize Candies Array:
 We start by creating a candies array of the same length as the ratings array and initialize all its values to 1. 
@@ -29,7 +29,7 @@ Finally, we sum up all the values in the candies array. This will give us the mi
 to be distributed to satisfy both conditions.
 */
 
-// Time Complexity: O(N)
+// Time Complexity: O(N) + O(N)
 // Space Complexity: O(N)
 
 
@@ -93,6 +93,49 @@ to be distributed to satisfy both conditions.
 //         int count = 0;
 //         for(auto i : candies){
 //             count += i;
+//         }
+
+//         return count;
+//     }
+// };
+
+
+
+
+/* Solution 2: Greedy Algorithm: One-Pass Method */
+// Time Complexity: O(N) 
+// Space Complexity: O(1)
+
+
+// class Solution {
+// public:
+//     int candy(vector<int>& ratings) {
+//         int n = ratings.size();
+//         int count = n, i=1;
+//         while(i<n){
+//             if(ratings[i] == ratings[i-1]){
+//                 i++;
+//                 continue;
+//             }
+            
+//             //For increasing slope
+//             int peak = 0;
+//             while(ratings[i] > ratings [i-1]){
+//                 peak++;
+//                 count += peak;
+//                 i++;
+//                 if(i == n) return count;
+//             }
+            
+//             //For decreasing slope
+//             int valley = 0;
+//             while(i<n && ratings[i] < ratings[i-1]){
+//                 valley++;
+//                 count += valley;
+//                 i++;
+//             }
+//             //Keep only the higher peak
+//             count -= min(peak, valley); 
 //         }
 
 //         return count;

@@ -58,7 +58,7 @@ job is the time before which job needs to be completed to earn the profit. */
 6) This ensures that we always keep the most profitable jobs within the available slots.
 7) Traverse through the heap and store the total profit and the count of jobs. */
 
-// Time Complexity: O(N * longN)            
+// Time Complexity: O(N * logN)            
 // Space Complexity: O(M)
 
 

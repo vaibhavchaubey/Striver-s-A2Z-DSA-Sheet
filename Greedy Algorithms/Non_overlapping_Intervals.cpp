@@ -15,6 +15,8 @@ Approach: we have to sort the intervals on the basis of their end points, then u
 // public: 
 //     // we have to sort the intervals on the basis of their end points, 
 //     // then use a greedy approach to find the answer.
+//     // This sorting is crucial because it allows us to prioritize intervals that finish early, 
+//     // giving us more opportunities to accommodate additional meetings later on.
 //     static bool comp(vector<int> &a, vector<int> &b){
 //         return a[1] < b[1];
 //     }
