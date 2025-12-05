@@ -1,13 +1,10 @@
 /* Leetcode Submission    (101. Symmetric Tree) */
 
-
 /* Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center). */
 
-
 /* Solution: */
-// Time Complexity: O(N)   
+// Time Complexity: O(N)
 // Space Complexity: O(N)
-
 
 // class Solution {
 // public:
@@ -23,7 +20,7 @@
 //     }
 //     bool isSymmetric(TreeNode* root) {
 //         if(root == NULL){
-//             return false;
+//             return true;
 //         }
 
 //         return isSymmetricHelp(root->left,root->right);
