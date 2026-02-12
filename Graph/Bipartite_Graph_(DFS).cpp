@@ -52,35 +52,29 @@ Return true if and only if it is bipartite. */
 
 
 
-/* Solution: Using BFS */
+/* Solution: Using DFS */
 
 // Time Complexity: O(N + E)
-// Space Complexity: O(N) + O(N)            // colors[], queue
+// Space Complexity: O(N) + O(N)            // colors[], recursion stack
 
 
 // class Solution {
 // public:
-//     bool bfs(int start, vector<int>& colors, vector<vector<int>>& graph){
-//         queue<int> q;
-//         q.push(start);
-//         colors[start] = 0;      
+//     bool dfs(int node, int color, vector<int>& colors, vector<vector<int>>& graph){
+//         colors[node] = color;
 
-//         while(!q.empty()){
-//             int node = q.front();
-//             q.pop();
-
-//             for(auto it : graph[node]){
-//                 // If the adjacent node is uncolored, assign alternate color
-//                 if(colors[it] == -1){
-//                     colors[it] = !colors[node];
-//                     q.push(it);
-//                 }
-//                 // If the adjacent vertex has the same color, graph is not bipartite
-//                 else if(colors[it] == colors[node]){
+//         for(auto it : graph[node]){
+//             // If the adjacent node is uncolored, assign alternate color
+//             if(colors[it] == -1){
+//                 if(!dfs(it, !color, colors, graph)){
 //                     return false;
 //                 }
-//             } 
-//         }
+//             }
+//             // If the adjacent vertex has the same color, graph is not bipartite
+//             else if(colors[it] == color){
+//                 return false;
+//             }
+//         } 
 
 //         return true;
 //     }
@@ -89,7 +83,7 @@ Return true if and only if it is bipartite. */
 //         vector<int> colors(n, -1);
 
 //         for(int i = 0; i < n; i++){
-//             if(colors[i] == -1 && !bfs(i, colors, graph)){
+//             if(colors[i] == -1 && !dfs(i, 0, colors, graph)){
 //                 return false;
 //             }
 //         }
@@ -97,4 +91,3 @@ Return true if and only if it is bipartite. */
 //         return true;
 //     }
 // };
-
