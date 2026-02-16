@@ -6,7 +6,10 @@ Note: The graph can have multiple component. */
 
 
 
-/* Solution: Using BFS */
+/* Solution: Using BFS 
+Any adjacent node other that parent node if visited then the graph has cycle. We can use a queue to perform BFS and keep track of the parent node for each visited node. If we encounter an adjacent node that is already visited and is not the parent of the current node, then we have found a cycle in the graph. */
+
+
 // Time Complexity: O(N + 2E) + O(N) 
 /* Where N = Nodes, 2E is for total degrees as we traverse all adjacent nodes. In the case of connected components of a graph, it will take another O(N) time. */
 
