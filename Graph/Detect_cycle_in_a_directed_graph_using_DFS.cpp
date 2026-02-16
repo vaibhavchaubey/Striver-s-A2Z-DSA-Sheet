@@ -64,3 +64,60 @@ vis[node] = true    pathVis[node] = true    then cycle is present */
 //         return false;
 //     }
 // };
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* OR Using single array   -->   mark vis as 1 and to mark pathVis, mark it as 2
+
+Using single array instead of two arrays (vis and pathVis) to keep track of visited nodes and nodes in the current path. We can use three states for each node: 0 (unvisited), 1 (visited but not part of the current path), and 2 (visited and part of the current path). When we visit a node, we mark it as 2. If we encounter an adjacent node that is already marked as 2, then we have found a cycle in the graph. After exploring all adjacent nodes, we backtrack by marking the current node as 1. */
+
+
+// Time Complexity: O(N + E) + O(N) 
+/* Where N = Nodes, E is for total edges. In the case of connected components of a graph, it will take another O(N) time. */
+
+// Space Complexity: O(N) + O(N)                  // vis[], recursion stack,     
+
+
+// class Solution {
+//   public:
+//     bool dfs(int node, vector<int> adj[], vector<int>& vis){
+//         vis[node] = 2;
+        
+//         for(auto it : adj[node]){
+//             if(vis[it] == 0){
+//                 if(dfs(it, adj, vis)){
+//                     return true;
+//                 }
+//             }
+//             // Any adjacent node if visited and also part of current path then the graph has cycle
+//             else if(vis[it] == 2){
+//                 return true;
+//             }
+//         }
+        
+//         // Backtracking step: Mark the current node as not part of the current path
+//         vis[node] = 1;
+//         return false;
+//     }
+//     bool isCyclic(int V, vector<vector<int>> &edges) {
+//         vector<int> adj[V];
+//         for(auto it : edges){
+//             int u = it[0];
+//             int v = it[1];
+//             // since it's a directed graph, we only add edge from u to v
+//             adj[u].push_back(v);
+//         }
+        
+//         vector<int> vis(V, 0);
+//         for(int i = 0; i < V; i++){
+//             if(vis[i] == 0 && dfs(i, adj, vis)){
+//                 return true;
+//             }
+//         }
+        
+//         return false;
+//     }
+// };
+
