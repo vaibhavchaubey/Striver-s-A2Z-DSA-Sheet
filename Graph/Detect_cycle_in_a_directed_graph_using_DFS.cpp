@@ -19,7 +19,7 @@ vis[node] = true    pathVis[node] = true    then cycle is present */
 // Time Complexity: O(N + E) + O(N) 
 /* Where N = Nodes, E is for total edges. In the case of connected components of a graph, it will take another O(N) time. */
 
-// Space Complexity: O(N) + O(N) + O(N)                  // vis[], pathVis[], recursion stack,      
+// Space Complexity: O(N) + O(N) + O(N)                  // vis[], pathVis[], recursion stack      
 
 
 // class Solution {
@@ -77,7 +77,7 @@ Using single array instead of two arrays (vis and pathVis) to keep track of visi
 // Time Complexity: O(N + E) + O(N) 
 /* Where N = Nodes, E is for total edges. In the case of connected components of a graph, it will take another O(N) time. */
 
-// Space Complexity: O(N) + O(N)                  // vis[], recursion stack,     
+// Space Complexity: O(N) + O(N)                  // vis[], recursion stack    
 
 
 // class Solution {
