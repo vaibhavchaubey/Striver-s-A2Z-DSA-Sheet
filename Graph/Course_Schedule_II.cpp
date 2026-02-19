@@ -47,7 +47,7 @@ Return the ordering of courses you should take to finish all courses. If there a
 //             }
 //         }
 
-//         // Return order if valid, else empty
+//         // Return order if valid topological ordering, else empty
 //         if(order.size() == V){
 //             return order;
 //         }
