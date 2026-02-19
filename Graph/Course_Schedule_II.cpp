@@ -33,11 +33,11 @@ Return the ordering of courses you should take to finish all courses. If there a
 //             }
 //         }
         
-//         vector<int> ans;
+//         vector<int> order;
 //         while(!q.empty()){
 //             int node = q.front();
 //             q.pop();
-//             ans.push_back(node);
+//             order.push_back(node);
             
 //             for(auto it : adj[node]){
 //                 indegree[it]--;
@@ -46,8 +46,13 @@ Return the ordering of courses you should take to finish all courses. If there a
 //                 }
 //             }
 //         }
+
+//         // Return order if valid, else empty
+//         if(order.size() == V){
+//             return order;
+//         }
         
-//         return ans;
+//         return {};
 //     }
 //     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
 //         return topoSort(numCourses, prerequisites);
