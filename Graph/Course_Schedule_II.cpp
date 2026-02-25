@@ -7,7 +7,9 @@ Return the ordering of courses you should take to finish all courses. If there a
 
 
 
-/* Solution: Using BFS */
+/* Solution: Using BFS 
+Where we see problem where something is before something that is where we should think of Topological Sort. */
+
 // Time Complexity: O(N + E) 
 // Space Complexity: O(N) + O(N)                  // indegree[], queue     
 

@@ -13,6 +13,7 @@ Note: Your implementation will be tested using a driver code. It will print true
 
 
 /* Solution: Using BFS 
+Where we see problem where something is before something that is where we should think of Topological Sort.
 Step 1: Build a directed graph based on the given list of words. Compare adjacent words and create edges between the first different characters.
 Step 2: Perform a topological sort on the graph to determine the order of characters. If the given list of words is inconsistent with any possible letter ordering, return an empty string. */
 

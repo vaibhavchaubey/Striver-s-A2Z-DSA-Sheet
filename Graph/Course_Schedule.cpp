@@ -8,6 +8,7 @@ Return true if you can finish all courses. Otherwise, return false. */
 
 
 /* Solution: Using BFS 
+Where we see problem where something is before something that is where we should think of Topological Sort.
 If Topological Sort is possible then there is no cycle and we can finish all courses 
 If Topological Sort is not possible then there is cycle and we cannot finish all courses */
 
