@@ -110,47 +110,48 @@ while Binary Heap takes O(Logn) time. */
 // Space Complexity: O(N) + O(N) + O(N + E)                // priority_queue, dist[], adj[]
 
 
-class Solution {
-  public:
-    vector<int> dijkstra(int V, vector<vector<int>> &edges, int src) {
-        vector<pair<int, int>> adj[V];      // u, v, wt
-        for(auto it : edges){
-            int u = it[0];
-            int v = it[1];
-            int wt = it[2];
+
+// class Solution {
+//   public:
+//     vector<int> dijkstra(int V, vector<vector<int>> &edges, int src) {
+//         vector<pair<int, int>> adj[V];      // u, v, wt
+//         for(auto it : edges){
+//             int u = it[0];
+//             int v = it[1];
+//             int wt = it[2];
             
-            adj[u].push_back({v, wt});
-            adj[v].push_back({u, wt});
-        }
+//             adj[u].push_back({v, wt});
+//             adj[v].push_back({u, wt});
+//         }
         
-        // Always stores shortest distance at the top (min_heap)
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;       // dist, node   
-        vector<int> dist(V, INT_MAX);
+//         // Always stores shortest distance at the top (min_heap)
+//         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;       // dist, node   
+//         vector<int> dist(V, INT_MAX);
         
-        dist[src] = 0;
-        pq.push({0, src});            // dist, node 
+//         dist[src] = 0;
+//         pq.push({0, src});            // dist, node 
         
-        while(!pq.empty()){
-            int dis = pq.top().first;
-            int node = pq.top().second;
-            pq.pop();
+//         while(!pq.empty()){
+//             int dis = pq.top().first;
+//             int node = pq.top().second;
+//             pq.pop();
             
-            // If the distance is greater than the already found shortest distance, skip processing this node as it won't lead to a shorter path to any of its neighbors. This is an optimization to avoid unnecessary processing of nodes that have already been found with a shorter path.
-            if(dis > dist[node]){
-                continue;
-            }
+//             // If the distance is greater than the already found shortest distance, skip processing this node as it won't lead to a shorter path to any of its neighbors. This is an optimization to avoid unnecessary processing of nodes that have already been found with a shorter path.
+//             if(dis > dist[node]){
+//                 continue;
+//             }
             
-            for(auto it : adj[node]){
-                int v = it.first;
-                int wt = it.second;
+//             for(auto it : adj[node]){
+//                 int v = it.first;
+//                 int wt = it.second;
                 
-                if(dist[node] + wt < dist[v]){
-                    dist[v] = dist[node] + wt;
-                    pq.push({dist[v], v});
-                }
-            }
-        }
+//                 if(dist[node] + wt < dist[v]){
+//                     dist[v] = dist[node] + wt;
+//                     pq.push({dist[v], v});
+//                 }
+//             }
+//         }
         
-        return dist;
-    }
-};
+//         return dist;
+//     }
+// };
