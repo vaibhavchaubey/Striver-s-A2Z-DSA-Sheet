@@ -99,12 +99,12 @@ Now PQ contains:
 */
 
 
-/* Solution: Using Dijkstra's Algorithm with Priority Queue  
+/* Solution: Using Dijkstra's Algorithm with Set 
 
 // Time Complexity: O((N + E) * log N)  =>  O(N * logN + E * logN)  =>  O(E * logN)    (since usually E >> N)
 /* N time is taken for visiting N nodes, and E is for traveling through adjacent nodes overall and log N for priority_queue */
 
-// Space Complexity: O(N) + O(N) + O(N + E)                // priority_queue, dist[], adj[]
+// Space Complexity: O(N) + O(N) + O(N + E)                // set, dist[], adj[]
 
 
 
@@ -121,30 +121,31 @@ Now PQ contains:
 //             adj[v].push_back({u, wt});
 //         }
         
-//         // Always stores shortest distance at the top (min_heap)
-//         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;       // dist, node   
+//         // Always stores shortest distance at the top
+//         set<pair<int, int>> st;       // dist, node   
 //         vector<int> dist(V, INT_MAX);
         
 //         dist[src] = 0;
-//         pq.push({0, src});            // dist, node 
+//         st.insert({0, src});          // dist, node 
         
-//         while(!pq.empty()){
-//             int dis = pq.top().first;
-//             int node = pq.top().second;
-//             pq.pop();
-            
-//             // If the distance is greater than the already found shortest distance, skip processing this node as it won't lead to a shorter path to any of its neighbors. This is an optimization to avoid unnecessary processing of nodes that have already been found with a shorter path.
-//             if(dis > dist[node]){
-//                 continue;
-//             }
+//         while(!st.empty()){
+//             auto it = *(st.begin());
+//             int dis = it.first;
+//             int node = it.second;
+//             st.erase(it);
             
 //             for(auto it : adj[node]){
 //                 int v = it.first;
 //                 int wt = it.second;
                 
 //                 if(dist[node] + wt < dist[v]){
+//                     // If the distance is already present in set then remove it
+//                     if(dist[v] != INT_MAX){
+//                         st.erase({dist[v], v});
+//                     }
+                    
 //                     dist[v] = dist[node] + wt;
-//                     pq.push({dist[v], v});
+//                     st.insert({dist[v], v});
 //                 }
 //             }
 //         }
