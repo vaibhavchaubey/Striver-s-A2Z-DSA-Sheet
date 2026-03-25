@@ -77,7 +77,6 @@ If the returned list is invalid, the output will be -2. */
         
 //         vector<int> ans;
 //         int node = dest;
-//         ans.push_back(node);
 //         while(parent[node] != node){
 //             ans.push_back(node);
 //             node = parent[node];
