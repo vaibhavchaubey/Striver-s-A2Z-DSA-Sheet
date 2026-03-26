@@ -9,9 +9,12 @@ Note : You can move into an adjacent cell if that adjacent cell is filled with e
 
 
 
-/* Solution 1: Using BFS */
+/* Solution 1: Using BFS
+Since this is BFS (all weights = 1):
+First time you reach a cell = shortest path guaranteed   */
+
 // Time Complexity: O(4 * N * M)
-// Space Complexity: O(N * M) + O(N * M)                // dist[], queue
+// Space Complexity: O(N * M) + O(N * M)                // dist[][], queue
 
 
 // class Solution {
@@ -76,11 +79,9 @@ Each level = 1 step
 First time reaching destination = shortest path */
 
 // Time Complexity: O(4 * N * M)
-// Space Complexity: O(N * M) + O(N * M)                // vis[], queue
+// Space Complexity: O(N * M) + O(N * M)                // vis[][], queue
 
 
-
-// User function Template for C++
 
 // class Solution {
 //   public:
