@@ -167,7 +167,6 @@ The length of a clear path is the number of visited cells of this path. */
 
 
 /* Solution: Using BFS
-/* Solution: Using BFS 
 If I detect destination while exploring neighbors, I can return early and avoid pushing others.
 Because BFS guarantees:
 The first time you reach a node → it is via the shortest path
@@ -177,7 +176,7 @@ So:
 ✔ No need to explore further
 ✔ No need to push other neighbors */
 
-// Time Complexity: O(4 * N * M)
+// Time Complexity: O(8 * N * M)
 // Space Complexity: O(N * M) + O(N * M)                // vis[][], queue
 
 
