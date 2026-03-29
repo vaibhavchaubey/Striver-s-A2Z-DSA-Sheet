@@ -8,7 +8,7 @@ Return the minimum effort required to travel from the top-left cell to the botto
 
 
 
-/* Solution: Using Dijkstra's Algorithm with Priority Queue  
+/* Solution: Using Dijkstra's Algorithm with Priority Queue */  
 
 // Time Complexity: O(N * M * 4 * log(N * M))  =>  O(N * M * log(N * M))    (since we are visiting each cell at most once and for each cell we are checking its 4 neighbors and log(N * M) for priority_queue)
 /* Time complexity of Dijkstra's algorithm is O(E log V) here, E = n * m * 4, V = n * m  */
@@ -83,7 +83,7 @@ Note: The cost of a path is defined as the maximum absolute difference between t
 
 
 
-/* Solution: Using Dijkstra's Algorithm with Priority Queue  
+/* Solution: Using Dijkstra's Algorithm with Priority Queue */  
 
 // Time Complexity: O(N * M * 4 * log(N * M))  =>  O(N * M * log(N * M))    (since we are visiting each cell at most once and for each cell we are checking its 4 neighbors and log(N * M) for priority_queue)
 /* Time complexity of Dijkstra's algorithm is O(E log V) here, E = n * m * 4, V = n * m  */

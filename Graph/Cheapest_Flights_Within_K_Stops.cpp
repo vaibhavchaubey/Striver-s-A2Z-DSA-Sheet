@@ -6,7 +6,15 @@ You are also given three integers src, dst, and k, return the cheapest price fro
 
 
 
-/* Solution: Using Dijkstra's Algorithm with Queue  
+/* Solution: Using Dijkstra's Algorithm with Queue 
+
+We are not strictly asked to find the absolute shortest path ignoring stops — we have a stops constraint.
+Using Dijkstra’s algorithm with a priority queue always picks the currently cheapest distance to process next. But here, a cheaper path may exceed the allowed stops, so you can’t always commit to the first smallest distance.
+
+BFS guarantees:
+The first time we reach a node with a certain number of stops ≤ k, it’s the minimum cost for that stop count.
+Using a queue level by level (stop by stop) allows us to respect the stop limit automatically. */
+
 
 // Time Complexity: O(E)             
 /* As for Dijkstra's algorithm, the time complexity is O(E log V) where E is the number of edges and V is the number of vertices. However, in this implementation, we are using a queue instead of a priority queue (so we can omit this log V), which means that we are not always processing the vertex with the smallest distance first. Therefore, in the worst case, we may end up processing all edges without any optimization, leading to a time complexity of O(E). */
