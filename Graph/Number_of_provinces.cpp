@@ -43,7 +43,7 @@ Return the total number of provinces. */
 
 
 /* Solution 2: Converting adj matrix to adj list */
-// Time Complexity: O(N + E)
+// Time Complexity: O(N^2) + O(N + E)
 // Space Complexity: O(N) + O(N)       // vis[], recursion
 
 
@@ -78,6 +78,78 @@ Return the total number of provinces. */
 //             if (!vis[i]) {
 //                 numberOfComponents++;
 //                 dfs(i, adj, vis);
+//             }
+//         }
+
+//         return numberOfComponents;
+//     }
+// };
+
+
+
+/* Solution 3: Using Disjoint Set*/
+// Time Complexity: O(N^2 * α(n)) ~ O(N^2)
+// Space Complexity: O(N)             // DisjointSet
+
+
+// class DisjointSet{
+//     vector<int> parent, size;
+//     public:
+//     DisjointSet(int n){
+//         parent.resize(n + 1);
+//         size.resize(n + 1);
+//         for(int i = 0; i <= n; i++){
+//             parent[i] = i;                          // Initially, each node is its own parent (representative of its own set)
+//             size[i] = 1;                           // Size is initialized to 1 for all nodes (each node is a set of size 1)
+//         }
+//     }
+
+//     int findUParent(int node){
+//         if(node == parent[node]){
+//             return node;
+//         }
+
+//         return parent[node] = findUParent(parent[node]);            // Path Compression
+//     }
+
+//     void unionBySize(int u, int v){
+//         int parent_u = findUParent(u);
+//         int parent_v = findUParent(v);
+
+//         if(parent_u == parent_v){
+//             return;
+//         }
+
+//         if(size[parent_u] < size[parent_v]){
+//             parent[parent_u] = parent_v;
+//             size[parent_v] += size[parent_u];
+//         }
+//         else{                                                    // size[parent_v] < size[parent_u]
+//             parent[parent_v] = parent_u;
+//             size[parent_u] += size[parent_v];
+//         }
+//     }
+// };
+
+// class Solution {
+// public:
+//     int findCircleNum(vector<vector<int>>& isConnected) {
+//         int n = isConnected.size();
+//         int numberOfComponents = 0;
+
+//         DisjointSet* ds = new DisjointSet(n);
+
+//         for(int i = 0; i < n; i++){
+//             for(int j = 0; j < n; j++){
+//                 if(isConnected[i][j] == 1 && i != j){
+//                     ds->unionBySize(i, j);
+//                 }
+//             }
+//         }
+
+//         for(int i = 0; i < n; i++){
+//             if(ds->findUParent(i) == i){
+//                 numberOfComponents++;
 //             }
 //         }
 
