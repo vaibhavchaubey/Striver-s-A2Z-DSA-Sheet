@@ -109,7 +109,7 @@ The intuition of this algorithm is the greedy technique used for every edge. If 
 // class Solution {
 //   public:
 //     int kruskalsMST(int V, vector<vector<int>> &edges) {
-//         vector<pair<int, pair<int, int>>> adj;
+//         vector<pair<int, pair<int, int>>> adj;               // {wt, u, v}
         
 //         // O(N + E)
 //         for(auto it : edges){
@@ -121,7 +121,7 @@ The intuition of this algorithm is the greedy technique used for every edge. If 
 //         }
 
 //         // O(E log E)
-//         sort(adj.begin(), adj.end());
+//         sort(adj.begin(), adj.end());               // sort all edges w.r.t wt
         
 //         DisjointSet* ds = new DisjointSet(V);
         
