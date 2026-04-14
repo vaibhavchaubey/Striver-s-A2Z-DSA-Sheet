@@ -10,7 +10,7 @@ Return the minimum number of times you need to do this in order to make all the 
 
 
 /* Solution: Using Disjoint Set Union (DSU) 
-Whenever Graph is building dynamically or dynamic connections are happening, we can think of using Disjoint Set Union (DSU) or Union-Find data structure. */
+When ever Graph is building dynamically or dynamic connections are happening, we can think of using Disjoint Set Union (DSU) or Union-Find data structure. */
 
 // Time Complexity: O((N + E) * α(N))                  we visit every node and edge once to find number of components.
 // Space Complexity: O(N)                             // DisjointSet (parent[] and size[])
