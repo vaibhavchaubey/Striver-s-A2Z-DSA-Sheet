@@ -7,7 +7,7 @@ Find the shortest path from src(0) vertex to all the vertices and if it is impos
 
 
 /* Solution: Using DFS 
-Intuition: As because to toposort we move sequentially from one node to another node and we are sure that we have already calculated the shortest path for the previous node before moving to the next node. Hence, we minimize the no. of steps (which is O(N + E)) better than other standard algorithms like Dijkstra's or Bellman-Ford which have time complexity of O((N + E) log N) and O(N * E) respectively.
+Intuition: As because of toposort we move sequentially from one node to another node and we are sure that we have already calculated the shortest path for the previous node before moving to the next node. Hence, we minimize the no. of steps (which is O(N + E)) better than other standard algorithms like Dijkstra's or Bellman-Ford which have time complexity of O((N + E) log N) and O(N * E) respectively.
 
 Step 1: Perform a topological sort of the graph using DFS. This will give us an ordering of the vertices such that for every directed edge u -> v, vertex u comes before v in the ordering.
 Step 2:  Take the nodes out of stack & relax the edges. Initialize a distance array with infinity (or a very large number) for all vertices except the source vertex (0), which should be initialized to 0.
