@@ -35,7 +35,7 @@ Using a queue level by level (stop by stop) allows us to respect the stop limit 
 //             adj[u].push_back({v, wt});
 //         }
 
-//         queue<pair<int, pair<int, int>>> q;       // {stops, {node, dist}}  
+//         queue<pair<int, pair<int, int>>> q;       // {stops, {node, cost}}  
 //         q.push({0, {src, 0}});
 
 //         vector<int> dist(n, INT_MAX);
