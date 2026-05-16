@@ -21,10 +21,10 @@ Whenever Graph is building dynamically or dynamic connections are happening, we 
 //     vector<int> parent, size;
 // public:
 //     DisjointSet(int n){
-//         parent.resize(n + 1);
-//         size.resize(n + 1);
+//         parent.resize(n);
+//         size.resize(n);
 
-//         for(int i = 0; i <= n; i++){
+//         for(int i = 0; i < n; i++){
 //             parent[i] = i;
 //             size[i] = 1;
 //         }
@@ -71,7 +71,7 @@ Whenever Graph is building dynamically or dynamic connections are happening, we 
 //             maxCol = max(maxCol, it[1]);
 //         }
 
-//         DisjointSet ds(maxRow + maxCol + 1);
+//         DisjointSet ds(maxRow + maxCol + 2);
 
 //         unordered_set<int> nodes;
 //         for(auto &it : stones){
