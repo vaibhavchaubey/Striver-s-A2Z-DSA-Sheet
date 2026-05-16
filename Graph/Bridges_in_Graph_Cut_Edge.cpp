@@ -44,6 +44,7 @@ Tarjan's Algorithm is used to find all the bridges in a graph. A bridge is an ed
 //             }
 //             // if node is already visited and tin of the child is less than the low of itself
 //             // we assign tin of the child to the low of the node
+//             // For a back edge, we use tin[it] because we only need the discovery time of the ancestor directly reachable through that back edge, not the lowest reachable node from its subtree.
 //             else{
 //                 low[node] = min(low[node], tin[it]);
 //             }
@@ -63,7 +64,7 @@ Tarjan's Algorithm is used to find all the bridges in a graph. A bridge is an ed
 //         // vis - mark visited node 
 //         vector<int> tin(n, -1);
 //         vector<int> low(n, -1);
-//         vector<bool> vis(n, 0);
+//         vector<bool> vis(n, false);
 //         vector<vector<int>> ans;
 //         int timer = 0;
         

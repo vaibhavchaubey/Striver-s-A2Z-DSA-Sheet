@@ -36,6 +36,7 @@ Tarjan's Algorithm is used to find all the articulation points in a graph. An ar
                 
 //                 // when we get low of child is greater than or equal to tin of the node
 //                 // it means there is only path to cover child that's why node will be our articulation point
+//                 // as complete node we are removing and not any edge, so we check low[it] >= tin[node] because now we have to reach before the removed node not to the removed node
 //                 if(low[it] >= tin[node] && parent != -1){
 //                     isArticulation[node] = 1;
 //                 }
@@ -43,6 +44,7 @@ Tarjan's Algorithm is used to find all the articulation points in a graph. An ar
 //             }
 //             // if node is already visited and tin of the child is less than the low of itself
 //             // we assign tin of the child to the low of the node
+//             // For a back edge, we use tin[it] because we only need the discovery time of the ancestor directly reachable through that back edge, not the lowest reachable node from its subtree.
 //             else{
 //                 low[node] = min(low[node], tin[it]);
 //             }
