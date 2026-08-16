@@ -50,8 +50,8 @@ subsequence of arr'. */
 /* GFG   Submission    (Longest Bitonic subsequence) */
 
 
-/* Problem Statement: Given an array of positive integers. Find the maximum length of Bitonic subsequence. 
-A subsequence of array is called Bitonic if it is first strictly increasing, then strictly decreasing. */
+/* Problem Statement: Given an array of positive integers. Find the maximum length of Bitonic subsequence.  A subsequence of array is called Bitonic if it is first strictly increasing, then strictly decreasing. Return the maximum length of bitonic subsequence.
+Note : A strictly increasing or a strictly decreasing sequence should not be considered as a bitonic sequence */
 
 
 
@@ -61,37 +61,37 @@ A subsequence of array is called Bitonic if it is first strictly increasing, the
 // Space Complexity: O(N)
 
 
-// class Solution{
-// 	public:
-// 	int LongestBitonicSequence(vector<int>nums)
-// 	{
-// 	    int n = nums.size();
-	    
-	    
-// 	    vector<int> dp1(n, 1);
-// 	    for(int i = 0; i < n; i++){
-// 	        for(int prev = 0; prev < i; prev++){
-// 	            if(nums[prev] < nums[i] && 1 + dp1[prev] > dp1[i]){
-// 	                dp1[i] = 1 + dp1[prev]; 
-// 	            }
-// 	        }
-// 	    }
-	    
-// 	    vector<int> dp2(n, 1);
-// 	    // reverse the direction of nested loops
-// 	    for(int i = n-1; i >= 0; i--){
-// 	        for(int prev = n-1; prev > i; prev--){
-// 	            if(nums[prev] < nums[i] && 1 + dp2[prev] > dp2[i]){
-// 	                dp2[i] = 1 + dp2[prev]; 
-// 	            }
-// 	        }
-// 	    }
-	    
-// 	    int ans = -1;
-// 	    for(int i = 0; i < n; i++){
-// 	        ans = max(ans, dp1[i] + dp2[i] - 1);
-// 	    }
-	    
-// 	    return ans;
-// 	}
+// class Solution {
+//   public:
+//     int longestBitonicSequence(int n, vector<int> &nums) {
+//         vector<int> dp1(n, 1);
+// 		for(int i = 0; i < n; i++){
+// 		    for(int prev = 0; prev < i; prev++){
+// 		        if(nums[prev] < nums[i]){
+// 		            dp1[i] = max(dp1[i], 1 + dp1[prev]); 
+// 		        }
+// 		    }
+// 		}
+
+// 		vector<int> dp2(n, 1);
+// 		// reverse the direction of nested loops
+// 		for(int i = n-1; i >= 0; i--){
+// 		    for(int prev = n-1; prev > i; prev--){
+// 		        if(nums[prev] < nums[i]){
+// 		            dp2[i] = max(dp2[i], 1 + dp2[prev]);  
+// 		        }
+// 		    }
+// 		}
+
+// 		int ans = 0;
+// 		for(int i = 0; i < n; i++){
+// 		    // Valid bitonic sequence must have both
+//             // increasing and decreasing parts
+// 		    if(dp1[i] > 1 && dp2[i] > 1){
+// 		        ans = max(ans, dp1[i] + dp2[i] - 1);
+// 		    }
+// 		}
+
+// 		return ans;
+//     }
 // };
