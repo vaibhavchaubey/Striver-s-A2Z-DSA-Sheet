@@ -24,6 +24,7 @@ Return the length of the longest possible word chain with words chosen from the 
 //         if(s1.size() != s2.size() + 1){
 //             return false;
 //         }
+
 //         int first = 0;
 //         int second = 0;
 
@@ -40,9 +41,8 @@ Return the length of the longest possible word chain with words chosen from the 
 //         if(first == s1.size() && second == s2.size()){
 //             return true;
 //         }
-//         else{
-//             return false;
-//         }
+
+//         return false;
 //     }
 //     static bool comp(string& s1, string& s2){
 //         return s1.size() < s2.size();
@@ -50,7 +50,7 @@ Return the length of the longest possible word chain with words chosen from the 
 //     int longestStrChain(vector<string>& words) {
 //         int n = words.size();
 
-//         //sort the array
+//         // sort the array in increasing order of length of the strings
 //         sort(words.begin(), words.end(), comp);
 
 //         vector<int> dp(n, 1);
@@ -58,10 +58,11 @@ Return the length of the longest possible word chain with words chosen from the 
 //         int ans = -1;
 //         for(int i = 0; i < n; i++){
 //             for(int prev_index = 0; prev_index < i; prev_index++){
-//                 if(isPredecessor(words[i], words[prev_index]) && 1 + dp[prev_index] > dp[i]){
-//                     dp[i] = 1 + dp[prev_index];
+//                 if(isPredecessor(words[i], words[prev_index])){
+//                     dp[i] = max(dp[i], 1 + dp[prev_index]);
 //                 }
 //             }
+            
 //             ans = max(ans, dp[i]);
 //         }
 
