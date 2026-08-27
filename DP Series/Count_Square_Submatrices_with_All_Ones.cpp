@@ -8,9 +8,10 @@
 /* A square matrix is a matrix with equal numbers of rows and columns. */
 
 
-/* Solution:  */
-// Time Complexity: O(N*M), where N = total no. of rows and M = total no. of columns
-// Space Complexity: O(N*M), where N = total no. of rows and M = total no. of columns
+/* Solution:  
+where N = total no. of rows and M = total no. of columns */
+// Time Complexity: O(N*M) 
+// Space Complexity: O(N*M)
 
 
 // class Solution {
