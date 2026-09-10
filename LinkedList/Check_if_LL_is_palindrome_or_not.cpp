@@ -31,7 +31,16 @@
 
 
 
-/* Solution 2:  (Slow and Fast Pointer Method)  */
+/* Solution 2:  (Slow and Fast Pointer Method)  
+For LL 1->2->1
+
+Middle element is 2
+After reverse from 2 LL becomes  1->2->NULL
+
+LL structure effectively becomes:
+head → 1 → NULL
+slow → 1 → 2 → NULL
+*/
 // Time Complexity: O(N/2) + O(N/2) + O(N/2) ~ O(N)
 // Space Complexity: O(1)
 
