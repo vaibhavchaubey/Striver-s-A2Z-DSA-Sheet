@@ -49,6 +49,67 @@ other meetings such that the start time of the current meeting is greater than t
 /* If we want to Print all meeting numbers */
 
 
+
+/* GFG  Submission    (Maximum Meetings in One Room) */
+
+/* Problem Statement: Given two arrays s[] and f[], where s[i] and f[i] denote the start time and finish time of the ith meeting, respectively. There is only one meeting room. A meeting can be scheduled only if its start time is strictly greater than the finish time of the previously selected meeting.
+
+Find the maximum number of meetings that can be scheduled in the room such that no two selected meetings overlap. Return the indices (1-based) of the selected meetings in sorted (increasing) order.
+
+Note: If multiple schedules are possible, prefer meetings with earlier finish times. If two meetings have the same finish time, prefer the meeting with the smaller index. */
+
+
+/* Solution: Greedy Algorithm */
+/* Approach: The idea is to solve the problem using the greedy approach which is the same as Activity Selection Problem i.e sort 
+the meetings by their finish time and then start selecting meetings, starting with the one with least end time and then select 
+other meetings such that the start time of the current meeting is greater than the end time of last meeting selected */
+
+// Time Complexity: O(N logN)
+// Space Complexity: O(N)
+
+
+// class Solution {
+//   public:
+//     vector<int> maxMeetings(vector<int> &s, vector<int> &f) {
+//         int n = s.size();
+//         vector<pair<int, int>> arr;
+        
+//         for(int i = 0; i < n; i++){
+//             arr.push_back({f[i], i});
+//         }
+        
+//         sort(arr.begin(), arr.end());
+        
+//         vector<int> ans;
+        
+//         int finish = arr[0].first;
+        
+//         // Initially select first meeting.
+//         ans.push_back(arr[0].second + 1);
+        
+//         for(int i = 1; i < n; i++){
+//             if(s[arr[i].second] > finish){
+//                 finish = arr[i].first;
+//                 ans.push_back(arr[i].second + 1);
+//             }
+//         }
+        
+//         sort(ans.begin(), ans.end());
+        
+//         return ans;
+//     }
+// };
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 // // C++ program to find maximum number of meetings
 // #include <bits/stdc++.h>
 // using namespace std;
