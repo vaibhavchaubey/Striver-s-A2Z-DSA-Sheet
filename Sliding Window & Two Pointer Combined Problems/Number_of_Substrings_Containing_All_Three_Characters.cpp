@@ -11,7 +11,6 @@ Return the number of substrings containing at least one occurrence of all these 
 
 
 // class Solution {
-// class Solution {
 // public:
 //     int numberOfSubstrings(string s) {
 //         int n = s.size();
@@ -20,9 +19,7 @@ Return the number of substrings containing at least one occurrence of all these 
 //             unordered_set<char> set;
 //             // nested loop for getting different string starting with s[i]
 //             for(int j = i; j < n; j++){
-//                 if(s[j] == 'a' || s[j] == 'b' || s[j] == 'c'){
-//                     set.insert(s[j]);
-//                 }
+//                 set.insert(s[j]);
 //                 if(set.size() == 3){
 //                     count++;
 //                 }
